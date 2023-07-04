@@ -22,7 +22,7 @@ class BottleController extends Controller
     {
         // Retrieve all bottles
         $bottles = Bottle::all();
-        return response()->json(['success' => true, 'data' => $bottles]);
+        return response()->json(['success' => true, 'data' => $bottles])->header('Content-Type', 'application/json');
     }
 ///////////////////////////////////////////////////////////////////////////////
     /**

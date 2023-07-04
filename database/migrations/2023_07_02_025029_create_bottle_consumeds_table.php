@@ -14,11 +14,11 @@ class CreateBottleConsumedsTable extends Migration
     public function up()
     {
         Schema::create('bottles_consumed', function (Blueprint $table) {
-            $table->id();
-            $table->unsignedBigInteger('bottle_id');
-            $table->unsignedBigInteger('cellar_id');
-            $table->date('consumption_date');
-            $table->text('note');
+            $table->id()->notNullable();
+            $table->unsignedBigInteger('bottle_id')->notNullable();
+            $table->unsignedBigInteger('cellar_id')->notNullable();
+            $table->date('consumption_date')->nullable();
+            $table->text('note')->nullable();
             $table->timestamps();
             $table->foreign('cellar_id')->references('id')->on('cellars');
             $table->foreign('bottle_id')->references('id')->on('wine_bottles');

@@ -14,9 +14,9 @@ class CreateCellarsTable extends Migration
     public function up()
     {
         Schema::create('cellars', function (Blueprint $table) {
-            $table->id()->notNullable();
-            $table->string('name',100)->notNullable();
-            $table->unsignedBigInteger('user_id')->notNullable();
+            $table->id();
+            $table->string('name',100);
+            $table->unsignedBigInteger('user_id');
             $table->timestamps();
             $table->foreign('user_id')->references('id')->on('users');
         });

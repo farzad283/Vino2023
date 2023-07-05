@@ -14,8 +14,8 @@ class CreateCountriesTable extends Migration
     public function up()
     {
         Schema::create('countries', function (Blueprint $table) {
-            $table->id()->notNullable();
-            $table->string('name', 100)->unique()->notNullable(); // Définition de la colonne "name" en tant que varchar(255)
+            $table->id();
+            $table->string('name', 100)->unique(); // Définition de la colonne "name" en tant que varchar(255)
             $table->timestamps();
         });
     }

@@ -14,9 +14,9 @@ class CreateBottleConsumedsTable extends Migration
     public function up()
     {
         Schema::create('bottles_consumed', function (Blueprint $table) {
-            $table->id()->notNullable();
-            $table->unsignedBigInteger('bottle_id')->notNullable();
-            $table->unsignedBigInteger('cellar_id')->notNullable();
+            $table->id();
+            $table->unsignedBigInteger('bottle_id');
+            $table->unsignedBigInteger('cellar_id');
             $table->date('consumption_date')->nullable();
             $table->text('note')->nullable();
             $table->timestamps();

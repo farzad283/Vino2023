@@ -14,9 +14,9 @@ class CreateWishlistsTable extends Migration
     public function up()
     {
         Schema::create('wishlists', function (Blueprint $table) {
-            $table->id()->notNullable();
-            $table->unsignedBigInteger('user_id')->notNullable();
-            $table->unsignedBigInteger('bottle_id')->notNullable();
+            $table->id();
+            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('bottle_id');
             $table->unsignedInteger('quantity')->nullable();
             $table->timestamps();
             $table->foreign('user_id')->references('id')->on('users');

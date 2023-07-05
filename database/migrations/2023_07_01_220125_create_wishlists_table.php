@@ -17,7 +17,7 @@ class CreateWishlistsTable extends Migration
             $table->id();
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('bottle_id');
-            $table->unsignedInteger('quantity');
+            $table->unsignedInteger('quantity')->nullable();
             $table->timestamps();
             $table->foreign('user_id')->references('id')->on('users');
             $table->foreign('bottle_id')->references('id')->on('wine_bottles');

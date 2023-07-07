@@ -136,5 +136,16 @@ class BottleController extends Controller
 
         return response()->json(['success' => false, 'message' => 'Bottle not found in the cellar']);
     }
+
+      /**
+     * Display the specified resource.
+     *
+     * @param  \App\Models\Bottle  $cellar
+     * @return \Illuminate\Http\Response
+     */
+    public function show(Bottle $bottle)
+    {
+        return view('bottle.show', ['bottle' => $bottle]);
+    }
 }
 

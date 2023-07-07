@@ -24,6 +24,7 @@ Route::get('/', function () {
 
 Route::get('update',[SaqController::class,'updateSAQ']);
 Route::get('bottles',[BottleController::class,'index']);
+Route::get('single-bottle/{bottle}',\App\Http\Livewire\SingleBottle::class);
 Route::get('cellar',[CellarController::class,'index']);
 Route::post('cellar',[CellarController::class,'store']);
 

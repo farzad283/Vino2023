@@ -1,7 +1,4 @@
-# FRONTEND_URL=http://localhost:3000
-# SESSION_DOMAIN=localhost
-# SANCTUM_STATEFUL_DOMAINS=localhost:3000    
-# Enlever les commentaire plus tard
+
 
 
 APP_NAME=Laravel

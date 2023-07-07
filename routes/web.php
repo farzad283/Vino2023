@@ -20,6 +20,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+// À refaire avec LiveWire  N'oublier pas de mettre des commentaire en Français et le phpDoc aussi. 
 
 Route::get('update',[SaqController::class,'updateSAQ']);
 Route::get('bottles',[BottleController::class,'index']);

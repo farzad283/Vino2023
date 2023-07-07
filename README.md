@@ -1,6 +1,6 @@
 # Vino
 
- **Note importante : ceci est une version du projet incomplète, un membre de l'équipe va compléter ce qu'il manque. Entre temps, vous pouvez quand même faire l'installation**
+ **Note importante : Pour que tailwindcss s'actualise, utilisez la commande 'npm run watch'. Un petit inconvénient ici est que vous devrez recharger la page à chaque fois vous modifiez le style**
  
 ## Instructions d'installation
 

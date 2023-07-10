@@ -22,7 +22,8 @@ class BottleController extends Controller
     {
         // Retrieve all bottles
         $bottles = Bottle::all();
-        return response()->json(['success' => true, 'data' => $bottles])->header('Content-Type', 'application/json');
+        return view('bottle.index');
+        // return response()->json(['success' => true, 'data' => $bottles])->header('Content-Type', 'application/json');
     }
 ///////////////////////////////////////////////////////////////////////////////
     /**
@@ -135,6 +136,17 @@ class BottleController extends Controller
         }
 
         return response()->json(['success' => false, 'message' => 'Bottle not found in the cellar']);
+    }
+
+      /**
+     * Display the specified resource.
+     *
+     * @param  \App\Models\Bottle  $cellar
+     * @return \Illuminate\Http\Response
+     */
+    public function show(Bottle $bottle)
+    {
+        return view('bottle.show', ['bottle' => $bottle]);
     }
 }
 

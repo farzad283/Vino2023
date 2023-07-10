@@ -26,6 +26,89 @@ Route::get('/', function () {
 
 // À refaire avec LiveWire  N'oublier pas de mettre des commentaire en Français et le phpDoc aussi. 
 
+
+/////////////////////// Maryline ///////
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/////////////////////// Fin Maryline ///////
+
+
+/////////////////////// Farzad ///////
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/////////////////////// Fin Farzad ///////
+
+
+
+/////////////////////// Camille ///////
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/////////////////////// Fin Camille ///////
+
+
+/////////////////////// Safoora ///////
+
 Route::get('update',[SaqController::class,'updateSAQ']);
 ////////////////////////////////////////////////////////////////////////////////////////
 
@@ -44,3 +127,17 @@ Route::get('autocompleteBottle',[BottleController::class,'autocompleteBottle']);
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+/////////////////////// Fin Safoora ///////

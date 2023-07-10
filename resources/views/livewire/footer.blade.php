@@ -1,26 +1,15 @@
-<div>
-
-    <footer class="fixed bottom-0 left-0 z-20 w-full p-4 bg-white border-t border-gray-200 shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800 dark:border-gray-600">
-
-        <ul class="flex flex-wrap items-center mt-3 text-sm font-medium text-gray-500 dark:text-gray-400 sm:mt-0">
-            <li>
-                <a href="#" class="mr-4 hover:underline md:mr-6">About</a>
-            </li>
-            <li>
-                <a href="#" class="mr-4 hover:underline md:mr-6">Privacy Policy</a>
-            </li>
-            <li>
-                <a href="#" class="mr-4 hover:underline md:mr-6">Licensing</a>
-            </li>
-            <li>
-                <a href="#" class="hover:underline">Contact</a>
-            </li>
-        </ul>
-        <div>
-            <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2023 Tous droits réservés
-            </span>
+<div class="sticky bottom-0 bg-neutral-200 text-center text-white dark:bg-neutral-600">
+    <div class="container pt-9">
+        <div class="mb-9 flex justify-center">
+            <a href="#!" class="mr-9 text-neutral-800 dark:text-neutral-200"><img src="{{ asset('icons/wishlist.svg') }}" /></a>
+            <a href="#!" class="mr-9 text-neutral-800 dark:text-neutral-200"><img src="{{ asset('icons/cellars.svg') }}" /></a>
+            <a href="#" class="mr-4 hover:underline md:mr-6"><img src="{{ asset('icons/addBottle.svg') }}" /></a>
         </div>
+    </div>
 
-    </footer>
-
+    <!--Copyright section-->
+    <div class="bg-neutral-300 p-4 text-center text-neutral-700 dark:bg-neutral-700 dark:text-neutral-200">
+        © 2023 Copyright:
+        <a class="text-neutral-800 dark:text-neutral-400" href="https://tailwind-elements.com/">Vino Project</a>
+    </div>
 </div>

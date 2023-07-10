@@ -479,6 +479,12 @@ video {
 .container {
   width: 100%;
 }
+/* .container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+} */
+
 @media (min-width: 640px) {
 
   .container {

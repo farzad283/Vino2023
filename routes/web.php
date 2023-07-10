@@ -5,6 +5,10 @@ use App\Http\Controllers\CellarController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SAQController;
 
+use App\Http\Livewire\SingleBottle;
+use App\Http\Livewire\ManyBottles;
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -23,8 +27,12 @@ Route::get('/', function () {
 // À refaire avec LiveWire  N'oublier pas de mettre des commentaire en Français et le phpDoc aussi. 
 
 Route::get('update',[SaqController::class,'updateSAQ']);
-Route::get('bottles',[BottleController::class,'index']);
-Route::get('single-bottle/{bottle}',\App\Http\Livewire\SingleBottle::class);
+////////////////////////////////////////////////////////////////////////////////////////
+
+Route::get('bottles',ManyBottles::class);
+Route::get('/bottles/{bottle_id}', SingleBottle::class);
+
+//////////////////////////////////////////////////////////////////////////////////////
 Route::get('cellar',[CellarController::class,'index']);
 Route::post('cellar',[CellarController::class,'store']);
 

@@ -15,11 +15,6 @@
         <div>
             <h1 class="text-3xl font-bold mb-4">Mon application de gestion de celliers</h1>
 
-            <div class="bg-gray-300 p-4 rounded">
-                <p class="text-purple-700">Bienvenue! Je suis une composante.</p>
-                @livewire('counter')
-            </div>
-
             @livewire('test')
         </div>
     </div>

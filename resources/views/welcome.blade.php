@@ -11,6 +11,9 @@
    
     @livewire('button', ['lable' => "click on me"])
 
+    <!-- for testing -->
+    @livewire('footer')
+
 
     @livewireScripts
 </body>

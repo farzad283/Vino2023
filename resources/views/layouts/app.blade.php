@@ -40,8 +40,9 @@
     </main>
 
     <!-- Footer -->
-    <footer class="fixed">
-    @livewire('footer')
+    <footer class="">
+    
+        @livewire('footer')
     </footer>
     
     <!-- Livewire Scripts -->

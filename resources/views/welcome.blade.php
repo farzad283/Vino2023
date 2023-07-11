@@ -9,7 +9,8 @@
 </head>
 <body class="bg-gray-100 h-screen flex items-center justify-center">
    
-    @livewire('button', ['lable' => "click on me"])
+    <!-- @livewire('button', ['lable' => "click on me"]) -->
+    @livewire('content')
     
 
     @livewireScripts

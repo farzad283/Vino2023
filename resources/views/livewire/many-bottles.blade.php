@@ -1,6 +1,4 @@
-@extends('layouts.app')
 
-@section('content')
     <div class="flex justify-center items-center h-screen">
         <div class="bg-white p-8 rounded-lg shadow-lg">
             @foreach ($bottles as $bottle)
@@ -19,4 +17,4 @@
             {{ $bottles->links() }}
         </div>
     </div>
-@endsection
+

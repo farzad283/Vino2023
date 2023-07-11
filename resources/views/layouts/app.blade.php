@@ -1,23 +1,38 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fa">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Livewire Example</title>
+    <title>Your App Title</title>
+
+    
+    @livewireStyles
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     @livewireStyles
 </head>
+
 <body>
+    <header>
+        
+    </header>
+
     <nav>
-        <ul>
-            <li>Menu</li>    
-        </ul>
+    
     </nav>
 
-    <div>
-        {{ $slot }}
-    </div>
+    <main>
+        @yield('content')
+        
+        
+    </main>
 
+    <footer>
+      
+    </footer>
+
+   
+    <script src="{{ asset('js/app.js') }}"></script>
     @livewireScripts
 </body>
+
 </html>

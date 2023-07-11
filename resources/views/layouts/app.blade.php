@@ -24,9 +24,7 @@
         @yield('content')
     </main>
 
-    <footer>
-        @livewire('footer')
-    </footer>
+    @livewire('footer')
 
 
     <script src="{{ asset('js/app.js') }}"></script>

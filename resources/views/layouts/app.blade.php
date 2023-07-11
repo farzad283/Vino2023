@@ -19,16 +19,17 @@
     <!-- Livewire Styles -->
     @livewireStyles
 </head>
-<body class="bg-gray-200">
+<body class="bg-gray-200 ">
     <!-- Header -->
     <header class="flex bg-red justify-between item-center">
     @livewire('header')
     </header>
 
     <!-- Espace pour les composantes dynamiques -->
-    <main class="py-10">
+    <main class="px-2">
         <section>
             <!-- section pour les FILTRES pas encore développé -->
+         
         </section>
 
         <!-- section dynamique -->

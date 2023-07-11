@@ -14,8 +14,4 @@
         </div>
     </div>
 
-<<<<<<< HEAD
 </header>
-=======
-</header>
->>>>>>> upstream/main

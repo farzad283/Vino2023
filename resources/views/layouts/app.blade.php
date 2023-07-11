@@ -8,12 +8,7 @@
     @livewireStyles
 </head>
 <body>
-    <nav>
-        <ul>
-            <li>Menu</li>    
-        </ul>
-    </nav>
-
+  
     <div>
         {{ $slot }}
     </div>

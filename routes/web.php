@@ -11,7 +11,7 @@ use App\Http\Livewire\ManyCellars;
 
 
 use App\Http\Livewire\SingleBottle;
-use App\Http\Livewire\ManyBottles;
+
 
 
 /*
@@ -28,11 +28,11 @@ use App\Http\Livewire\ManyBottles;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/about', ManyBottles::class)->name('about');
-Route::get('/bouton', Button::class)->name('bouton');
+
+
+Route::get('bottles',ManyBottles::class);
+Route::get('/bottles/{bottle_id}', SingleBottle::class);
 Route::get('/cellars', ManyCellars::class)->name('cellars');
-
-
 
 // À refaire avec LiveWire  N'oublier pas de mettre des commentaire en Français et le phpDoc aussi. 
 

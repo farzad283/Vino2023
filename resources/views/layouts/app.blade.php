@@ -21,7 +21,7 @@
 </head>
 <body class="bg-gray-200">
     <!-- Header -->
-    <header class="fixed flex bg-red justify-between item-center">
+    <header class="flex bg-red justify-between item-center">
     @livewire('header')
     </header>
 

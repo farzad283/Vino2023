@@ -10,6 +10,10 @@ use App\Http\Livewire\ManyCellars;
 
 
 
+use App\Http\Livewire\SingleBottle;
+use App\Http\Livewire\ManyBottles;
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -32,6 +36,28 @@ Route::get('/cellars', ManyCellars::class)->name('cellars');
 
 // À refaire avec LiveWire  N'oublier pas de mettre des commentaire en Français et le phpDoc aussi. 
 
+
+/////////////////////// Maryline ///////
+
+
+/////////////////////// Fin Maryline ///////
+
+
+/////////////////////// Farzad ///////
+
+
+/////////////////////// Fin Farzad ///////
+
+
+
+/////////////////////// Camille ///////
+
+
+/////////////////////// Fin Camille ///////
+
+
+/////////////////////// Safoora ///////
+
 Route::get('update',[SaqController::class,'updateSAQ']);
 // Route::get('bottles',[BottleController::class,'index']);
 Route::get('cellar',[CellarController::class,'index']);
@@ -45,3 +71,17 @@ Route::get('autocompleteBottle',[BottleController::class,'autocompleteBottle']);
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+/////////////////////// Fin Safoora ///////

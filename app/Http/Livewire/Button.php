@@ -15,7 +15,7 @@ class Button extends Component
 
     public function render()
     {
-        return view('livewire.button');
+        return view('livewire.button', ['lable', $this->lable]);
     }
 
     public function handleClick()

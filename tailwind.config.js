@@ -11,6 +11,14 @@ module.exports = {
         'red': '#9B0738',
         'pale-pink': '#FB7F6',
         'gold': '#927A50',
+<<<<<<< HEAD
+=======
+      },
+      maxWidth:{
+        '100': '100px',
+        '150': '150px',
+        '200': '200px'
+>>>>>>> upstream/main
       }
     },
   },

@@ -4,7 +4,7 @@ use App\Http\Controllers\BottleController;
 use App\Http\Controllers\CellarController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SAQController;
-use App\Http\Livewire\Bottles;
+use App\Http\Livewire\ManyBottles;
 use App\Http\Livewire\Button;
 use App\Http\Livewire\ManyCellars;
 
@@ -24,7 +24,7 @@ use App\Http\Livewire\ManyCellars;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/about', Bottles::class)->name('about');
+Route::get('/about', ManyBottles::class)->name('about');
 Route::get('/bouton', Button::class)->name('bouton');
 Route::get('/cellars', ManyCellars::class)->name('cellars');
 

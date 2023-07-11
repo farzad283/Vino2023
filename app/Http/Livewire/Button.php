@@ -6,11 +6,11 @@ use Livewire\Component;
 
 class Button extends Component
 {
-    public $label;
+    public $lable;
 
-    public function mount($label = 'Click')
+    public function mount($lable = 'Click')
     {
-        $this->label = $label;
+        $this->lable = $lable;
     }
 
     public function render()

@@ -6,7 +6,7 @@ use Livewire\Component;
 use App\Models\Bottle;
 use Livewire\WithPagination;
 
-class Bottles extends Component
+class  ManyBottles extends Component
 {
     use WithPagination;
     
@@ -14,12 +14,12 @@ class Bottles extends Component
 
     public function render()
     {
-        $bottles = Bottle::orderBy('name')
-            ->paginate(9);
+        $bottles = Bottle::paginate(9);
 
-        return view('livewire.bottles', [
+        return view('livewire.many-bottles', [
             'bottles' => $bottles,
         ])->layout('layouts.app');
     }
+    
 }
 

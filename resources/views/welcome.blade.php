@@ -9,7 +9,9 @@
 
 </head>
 <body>
-    @livewire('bottles') 
+    @livewire('header') 
+    @livewire('many-bottles') 
     @livewireScripts
+    @livewire('header') 
 </body>
 </html>

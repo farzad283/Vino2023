@@ -24,10 +24,18 @@ class Bottle extends Model
     ];
 
     public function type(){
-        return $this->belongsTo(Type::class);
+        return $this->belongsTo(Type::class,'type_id');
     }
 
     public function country(){
-        return $this->belongsTo(Country::class);
+        return $this->belongsTo(Country::class,'country_id');
     }
+
+    public function cellars()
+    {
+    return $this->belongsToMany(Cellar::class, 'bottle_in_cellars')
+                ->withPivot('quantity');
+    }
+
+
 }

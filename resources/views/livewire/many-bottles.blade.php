@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="flex justify-center items-center h-screen">
+    <div class="flex justify-center items-center h-max">
         <div class="bg-white p-8 rounded-lg shadow-lg">
             @foreach ($bottles as $bottle)
                 <h1 class="text-3xl font-bold mb-4">{{ $bottle->name }}</h1>

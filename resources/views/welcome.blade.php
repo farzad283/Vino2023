@@ -16,29 +16,7 @@
 
 
 <!-- test maryline -->
-   @livewire('header') <!-- for testing -->
 
-
-
-
-
-
-
-    @livewire('many-bottles')
-
-    <!-- test safoora -->
-
-
-
-    <!-- test Xavier  -->
-
-
-
-    <!-- test Farzad -->
-
-    <!-- test camille  -->
-    <!-- for testing -->
-    @livewire('footer')
 
 
     @livewireScripts

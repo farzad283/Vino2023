@@ -19,6 +19,7 @@ class ManyBottles extends Component
     }
     public function render()
     {
+
         $bottles = Bottle::orderBy('name')
             ->paginate(9);
 

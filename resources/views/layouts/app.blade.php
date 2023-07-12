@@ -1,34 +1,55 @@
 <!DOCTYPE html>
-<html lang="fa">
-
+<html lang="fr">
 <head>
+
+<!-- version de Maryline 11 juillet 14h55 FONCTIONNE BIEN-->
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your App Title</title>
-
-
-    @livewireStyles
+    <title>Votre Titre</title>
+    
+    <!-- Metadonnées -->
+    <meta name="description" content="Description de votre site">
+    <meta name="keywords" content="Vos, Mots, Clés">
+    <meta name="author" content="Votre nom">
+    
+    <!-- Tailwind CSS -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    
+    <!-- Livewire Styles -->
+    @livewireStyles
 </head>
-
-<body>
-    <header>
-
+<body class="bg-gray-200 ">
+    <!-- Header -->
+    <header class="flex bg-red justify-between item-center">
+    @livewire('header')
     </header>
 
-    <nav>
+    <!-- Espace pour les composantes dynamiques -->
+    <main class="px-2">
+        <section>
+            <!-- section pour les FILTRES pas encore développé -->
+         
+        </section>
 
-    </nav>
+        <!-- section dynamique -->
+        <section>
 
-    <main>
         @yield('content')
+
+
+        </section>
     </main>
 
-    @livewire('footer')
+    <!-- Footer -->
+    <footer class="">
+    
+        @livewire('footer')
+    </footer>
+    
+    <!-- Livewire Scripts -->
 
 
-    <script src="{{ asset('js/app.js') }}"></script>
     @livewireScripts
 </body>
-
 </html>

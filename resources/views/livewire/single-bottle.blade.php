@@ -1,6 +1,4 @@
-@extends('layouts.app')
 
-@section('content')
     <div class="flex justify-center items-center h-screen">
         <div class="bg-white p-8 rounded-lg shadow-lg">
             <h1 class="text-3xl font-bold mb-4">{{ $bottle->name }}</h1>
@@ -17,5 +15,4 @@
             @livewire('button', ['lable' => "Adjouter au cellier"])
         </div>
     </div>
-@endsection
 

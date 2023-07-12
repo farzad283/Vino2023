@@ -52,7 +52,7 @@
                 <!-- Changements: viewBox -->
                 <!-- License: https://creativecommons.org/licenses/by/3.0/legalcode -->
                 <!-- Add Item by Martins Ratkus from <a href="https://thenounproject.com/browse/icons/term/add-item/" target="_blank" title="Add Item Icons">Noun Project</a> -->
-                <div class='hover:bg-pale-pink w-full flex items-center'>
+                <div wire:click="render" class='hover:bg-pale-pink w-full flex items-center'>
                     <!-- NOIRE -->
                     <!-- <svg xmlns="http://www.w3.org/2000/svg" data-name="Layer 1" viewBox="-12 -7 78 68">
                         <path d="M21.087 0H2.913A2.917 2.917 0 0 0 0 2.913v18.174A2.917 2.917 0 0 0 2.913 24h18.174A2.917 2.917 0 0 0 24 21.087V2.913A2.917 2.917 0 0 0 21.087 0ZM22 21.087a.915.915 0 0 1-.913.913H2.913A.915.915 0 0 1 2 21.087V2.913A.915.915 0 0 1 2.913 2h18.174a.915.915 0 0 1 .913.913ZM51.087 0H32.913A2.917 2.917 0 0 0 30 2.913v18.174A2.917 2.917 0 0 0 32.913 24h18.174A2.917 2.917 0 0 0 54 21.087V2.913A2.917 2.917 0 0 0 51.087 0ZM52 21.087a.915.915 0 0 1-.913.913H32.913a.915.915 0 0 1-.913-.913V2.913A.915.915 0 0 1 32.913 2h18.174a.915.915 0 0 1 .913.913ZM21.087 30H2.913A2.917 2.917 0 0 0 0 32.913v18.174A2.917 2.917 0 0 0 2.913 54h18.174A2.917 2.917 0 0 0 24 51.087V32.913A2.917 2.917 0 0 0 21.087 30ZM22 51.087a.915.915 0 0 1-.913.913H2.913A.915.915 0 0 1 2 51.087V32.913A.915.915 0 0 1 2.913 32h18.174a.915.915 0 0 1 .913.913Z" />

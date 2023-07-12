@@ -55,7 +55,7 @@ Route::get('/cellars', ManyCellars::class)->name('cellars');
 
 /////////////////////// Camille ///////
 
-
+Route::get('formAjouterBouteille', [BottleController::class, 'formAjouterBouteille']);
 /////////////////////// Fin Camille ///////
 
 

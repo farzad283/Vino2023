@@ -13,4 +13,9 @@ class Type extends Model
         'name'
     ];
 
+    public function bottles()
+    {
+    return $this->hasMany(Bottle::class, 'bottle_id');
+    }
+
 }

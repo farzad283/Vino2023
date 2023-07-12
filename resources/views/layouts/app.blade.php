@@ -37,6 +37,7 @@
 
         @yield('content')
 
+
         </section>
     </main>
 
@@ -47,6 +48,8 @@
     </footer>
     
     <!-- Livewire Scripts -->
+
+
     @livewireScripts
 </body>
 </html>

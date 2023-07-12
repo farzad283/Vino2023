@@ -14,31 +14,31 @@ class BottleController extends Controller
 
 
     /**
-     * Display a listing of the resource.
+     * Afficher toutes les bouteilles de la BD
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        // Retrieve all bottles
+        // Aller chercher toutes les bouteilles
         $bottles = Bottle::all();
         return view('bottle.index');
         // return response()->json(['success' => true, 'data' => $bottles])->header('Content-Type', 'application/json');
     }
 ///////////////////////////////////////////////////////////////////////////////
     /**
-     * Autocomplete bottle based on name.
+     * Rechercher une bouteille dans la BD
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function autocompleteBottle(Request $request)
+    public function searchBottle(Request $request)
     {
-        // Get the name and number of results from the request
+        // Aller chercher le nom et le nombre de résultats associés à la requête
         $nom = $request->input('nom');
         $nb_resultat = $request->input('nb_resultat', 10);
 
-        // Search for bottles with matching names
+        // Trouver les bouteilles correspondantes à l'entrée $nom
         $rows = Bottle::where('name', 'like', '%' . $nom . '%')
             ->limit($nb_resultat)
             ->get(['id', 'name']);
@@ -47,22 +47,22 @@ class BottleController extends Controller
     }
 /////////////////////////////////////////////////////////////////////////
     /**
-     * Add a new bottle to the cellar.
+     * Ajouter une bouteille non listée à un cellier.
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
     public function ajouterNouvelleBottleCellier(Request $request)
     {
-        // Get the bottle ID and cellar ID from the request
+        // Aller chercher l'id de la bouteille et l'id du cellier provenant de la requête.
         $bottleId = $request->input('bottle_id');
         $cellarId = $request->input('cellar_id');
 
-        // Check if the cellar and bottle exist
+        // Vérifier si le cellier et la bouteille existe
         $cellar = Cellar::findOrFail($cellarId);
         $bottle = Bottle::findOrFail($bottleId);
 
-        // Add the existing bottle to the cellar
+        // Ajouter la bouteille existante dans le cellier.
         $bottleInCellar = new BottleInCellar([
             'bottle_id' => $bottleId,
             'cellar_id' => $cellarId,
@@ -74,7 +74,7 @@ class BottleController extends Controller
     }
 ///////////////////////////////////////////////////////////////////////
     /**
-     * Consume a bottle from the cellar.
+     * Boire une bouteille d'un cellier (delete)
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
@@ -111,19 +111,19 @@ class BottleController extends Controller
     }
 ////////////////////////////////////////////////////////////////////////////
     /**
-     * Add or update the quantity of a bottle in the cellar.
+     * Ajouter une bouteille ou mettre à jour une quantité de bouteilles dans un cellier.
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
     public function ajouterBottleCellier(Request $request)
     {
-        // Get the bottle ID, cellar ID, and new quantity from the request
+        // Aller chercher l'id de la bouteille, l'id du cellier et la nouvelle quantité provenant de la requête.
         $bottleId = $request->input('bottle_id');
         $cellarId = $request->input('cellar_id');
         $newQuantity = $request->input('new_quantity');
 
-        // Search for the existence of BottleInCellar
+        // Voir si la bouteille existe dans le cellier (devrait être vérifier dans LES celliers)
         $bottleInCellar = BottleInCellar::where('bottle_id', $bottleId)
             ->where('cellar_id', $cellarId)
             ->first();
@@ -139,7 +139,7 @@ class BottleController extends Controller
     }
 
       /**
-     * Display the specified resource.
+     * Afficher une bouteille.
      *
      * @param  \App\Models\Bottle  $cellar
      * @return \Illuminate\Http\Response

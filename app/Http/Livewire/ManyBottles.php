@@ -2,19 +2,30 @@
 
 namespace App\Http\Livewire;
 
-
 use Livewire\Component;
-use Livewire\WithPagination;
 use App\Models\Bottle;
+use Livewire\WithPagination;
 
 class ManyBottles extends Component
 {
     use WithPagination;
-
+    
+    public $component = 'bottles';
+    public function styles()
+    {
+        return [
+            'css/livewire.css',
+        ];
+    }
     public function render()
     {
-        $bottles = Bottle::paginate(10); // set your desired items per page here
-        return view('livewire.many-bottles', ['bottles'=>$bottles]);
+        $bottles = Bottle::orderBy('name')
+            ->paginate(9);
+
+        return view('livewire.many-bottles', [
+            'bottles' => $bottles,
+        ])->layout('layouts.app');
     }
+
 }
 

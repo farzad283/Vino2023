@@ -1,6 +1,11 @@
 <!DOCTYPE html>
+
+
+
 <html lang="fr">
+
 <head>
+
 
 <!-- version de Maryline 11 juillet 14h55 FONCTIONNE BIEN-->
 
@@ -45,9 +50,11 @@
     <footer class="">
     
         @livewire('footer')
+
     </footer>
     
     <!-- Livewire Scripts -->
+
 
 
     @livewireScripts

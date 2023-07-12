@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class BottleInCellar extends Model
 {
     use HasFactory;
-    protected $table = 'bottles_in_cellars';
+    protected $table = 'bottle_in_cellars';
     protected $fillable = [
         'bottle_id',
         'cellar_id',
@@ -16,11 +16,6 @@ class BottleInCellar extends Model
     ];
 
 
-    public function bottle(){
-        return $this->belongsTo(Bottle::class);
-    }
 
-    public function cellar(){
-        return $this->belongsTo(Cellar::class);
-    }
+    
 }

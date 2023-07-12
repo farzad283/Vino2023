@@ -7,11 +7,36 @@
     @livewireStyles
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 </head>
+
 <body class="bg-gray-100 h-screen flex items-center justify-center">
    
 
     @livewire('button', ['lable' => "click on me"])
 
+
+
+<!-- test maryline -->
+   @livewire('header') <!-- for testing -->
+
+
+
+
+
+
+
+    @livewire('many-bottles')
+
+    <!-- test safoora -->
+
+
+
+    <!-- test Xavier  -->
+
+
+
+    <!-- test Farzad -->
+
+    <!-- test camille  -->
     <!-- for testing -->
     @livewire('footer')
 

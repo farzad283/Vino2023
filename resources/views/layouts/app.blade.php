@@ -22,7 +22,6 @@
 
     <main>
         @yield('content')
-
     </main>
 
     @livewire('footer')

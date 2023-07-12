@@ -14,8 +14,14 @@ class Cellar extends Model
         'user_id'
     ];
 
-    public function user()
+    public function user() {
+        return $this->belongsTo(User::class);
+    }
+
+    public function bottles()
     {
-        return $this->belongsTo(User::class, 'user_id', 'id');
-    } // user_id est ce que j'ai déclarer plus haut (la clé étrangère), id fait référence à la clé primaire de ce que je viens de déclarer, ici c'est user(La clé primaire est id). 
+    return $this->belongsToMany(Bottle::class, 'bottle_in_cellars')
+                ->withPivot('quantity'); // pour récuperer la donnée quantité 
+    }
+
 }

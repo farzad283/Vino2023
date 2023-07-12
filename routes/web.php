@@ -9,6 +9,15 @@ use App\Http\Livewire\SingleBottle;
 use App\Http\Livewire\ManyBottles;
 
 
+
+
+
+
+
+
+use App\Http\Livewire\SingleCellar;
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -80,3 +89,9 @@ Route::get('autocompleteBottle',[BottleController::class,'autocompleteBottle']);
 
 
 /////////////////////// Fin Safoora ///////
+
+
+/////////////////////// Xavier ///////
+
+
+Route::get('/singleCellar/{cellar_id}',SingleCellar::class);

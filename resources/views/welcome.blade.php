@@ -8,9 +8,20 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     @livewireStyles
 </head>
-<body>
-    <div class="bg-blue-500">@livewire('header') </div>
-    @livewire('many-bottles') 
+
+
+<body class="bg-gray-100 h-screen flex items-center justify-center">
+   
+
+    @livewire('button', ['lable' => "click on me"])
+
+
+
+<!-- test maryline -->
+
+
+
+
     @livewireScripts
     <div class="bg-blue-500">@livewire('footer') </div>
 </body>

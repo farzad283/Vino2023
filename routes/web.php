@@ -1,17 +1,14 @@
 <?php
 
-use App\Http\Controllers\BottleController;
-use App\Http\Controllers\CellarController;
+// use App\Http\Controllers\BottleController;
+// use App\Http\Controllers\CellarController;
+// use Illuminate\Support\Facades\Route;
+// use App\Http\Controllers\SAQController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\SAQController;
-use App\Http\Livewire\ManyBottles;
-use App\Http\Livewire\Button;
-use App\Http\Livewire\ManyCellars;
-
-
 
 use App\Http\Livewire\SingleBottle;
-
+use App\Http\Livewire\ManyBottles;
+use App\Http\Livewire\AjouterCellier;
 
 
 
@@ -38,11 +35,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
-Route::get('bottles',ManyBottles::class);
-Route::get('/bottles/{bottle_id}', SingleBottle::class);
-Route::get('/cellars', ManyCellars::class)->name('cellars');
-
 // À refaire avec LiveWire  N'oublier pas de mettre des commentaire en Français et le phpDoc aussi. 
 
 
@@ -53,7 +45,9 @@ Route::get('/cellars', ManyCellars::class)->name('cellars');
 
 
 /////////////////////// Farzad ///////
-
+Route::get('bottles',ManyBottles::class);
+Route::get('/bottles/{bottle_id}', SingleBottle::class);
+Route::get('/cellars', ManyCellars::class)->name('cellars');
 
 /////////////////////// Fin Farzad ///////
 
@@ -68,9 +62,20 @@ Route::get('/cellars', ManyCellars::class)->name('cellars');
 /////////////////////// Safoora ///////
 
 Route::get('update',[SaqController::class,'updateSAQ']);
-// Route::get('bottles',[BottleController::class,'index']);
+////////////////////////////////////////////////////////////////////////////////////////
+
+Route::get('bottles',ManyBottles::class);
+Route::get('/bottles/{bottle_id}', SingleBottle::class);
+Route::get('/ajouter-cellier', AjouterCellier::class)->name('ajouter_cellier');
+Route::post('/ajouter-cellier', [AjouterCellier::class, 'store'])->name('ajouter_cellier.store');
+
+Route::post('/ajouter-cellier', [AjouterCellier::class, 'store']);
+
+
+//////////////////////////////////////////////////////////////////////////////////////
 Route::get('cellar',[CellarController::class,'index']);
-Route::post('cellar',[CellarController::class,'store']);
+Route::get('cellar',[CellarController::class,'store']);
+
 
 
 Route::post('ajouter-nouvelle-bottleCellier',[BottleController::class,'ajouterNouvelleBottleCellier']);
@@ -78,25 +83,8 @@ Route::post('boireBottleCellier',[BottleController::class,'boireBottleCellier'])
 Route::post('ajouterBottleCellier',[BottleController::class,'ajouterBottleCellier']);
 Route::get('autocompleteBottle',[BottleController::class,'autocompleteBottle']);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /////////////////////// Fin Safoora ///////
 
 
 /////////////////////// Xavier ///////
-
-
 Route::get('/singleCellar/{cellar_id}',SingleCellar::class);

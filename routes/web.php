@@ -4,9 +4,11 @@
 // use App\Http\Controllers\CellarController;
 // use Illuminate\Support\Facades\Route;
 // use App\Http\Controllers\SAQController;
+use Illuminate\Support\Facades\Route;
 
 use App\Http\Livewire\SingleBottle;
 use App\Http\Livewire\ManyBottles;
+use App\Http\Livewire\AjouterCellier;
 
 
 /*
@@ -53,10 +55,16 @@ Route::get('update',[SaqController::class,'updateSAQ']);
 
 Route::get('bottles',ManyBottles::class);
 Route::get('/bottles/{bottle_id}', SingleBottle::class);
+Route::get('/ajouter-cellier', AjouterCellier::class)->name('ajouter_cellier');
+Route::post('/ajouter-cellier', [AjouterCellier::class, 'store'])->name('ajouter_cellier.store');
+
+Route::post('/ajouter-cellier', [AjouterCellier::class, 'store']);
+
 
 //////////////////////////////////////////////////////////////////////////////////////
 Route::get('cellar',[CellarController::class,'index']);
-Route::post('cellar',[CellarController::class,'store']);
+Route::get('cellar',[CellarController::class,'store']);
+
 
 
 Route::post('ajouter-nouvelle-bottleCellier',[BottleController::class,'ajouterNouvelleBottleCellier']);

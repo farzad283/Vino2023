@@ -10,7 +10,7 @@ class ManyBottles extends Component
 {
     use WithPagination;
     
-    // public $component = 'bottles';
+    public $component = 'bottles';
     public function styles()
     {
         return [

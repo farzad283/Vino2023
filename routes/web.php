@@ -1,10 +1,10 @@
 <?php
 
-// use App\Http\Controllers\BottleController;
-// use App\Http\Controllers\CellarController;
-// use Illuminate\Support\Facades\Route;
-// use App\Http\Controllers\SAQController;
-use Illuminate\Support\Facades\Route;
+ use App\Http\Controllers\BottleController;
+ use App\Http\Controllers\CellarController;
+ use Illuminate\Support\Facades\Route;
+ use App\Http\Controllers\SAQController;
+ use App\Http\Livewire\ManyCellars;
 
 use App\Http\Livewire\SingleBottle;
 use App\Http\Livewire\ManyBottles;

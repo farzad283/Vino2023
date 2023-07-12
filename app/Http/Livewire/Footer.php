@@ -11,3 +11,4 @@ class Footer extends Component
         return view('livewire.footer');
     }
 }
+

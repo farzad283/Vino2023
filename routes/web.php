@@ -45,7 +45,9 @@ Route::get('/', function () {
 
 
 /////////////////////// Farzad ///////
-
+Route::get('bottles',ManyBottles::class);
+Route::get('/bottles/{bottle_id}', SingleBottle::class);
+Route::get('/cellars', ManyCellars::class)->name('cellars');
 
 /////////////////////// Fin Farzad ///////
 
@@ -81,25 +83,8 @@ Route::post('boireBottleCellier',[BottleController::class,'boireBottleCellier'])
 Route::post('ajouterBottleCellier',[BottleController::class,'ajouterBottleCellier']);
 Route::get('autocompleteBottle',[BottleController::class,'autocompleteBottle']);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /////////////////////// Fin Safoora ///////
 
 
 /////////////////////// Xavier ///////
-
-
 Route::get('/singleCellar/{cellar_id}',SingleCellar::class);

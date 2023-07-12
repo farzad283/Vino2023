@@ -15,4 +15,3 @@
             @livewire('button', ['lable' => "Adjouter au cellier"])
         </div>
     </div>
-

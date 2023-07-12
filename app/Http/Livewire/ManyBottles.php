@@ -29,4 +29,3 @@ class ManyBottles extends Component
     }
 
 }
-

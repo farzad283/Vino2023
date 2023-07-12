@@ -51,7 +51,7 @@ Route::get('/', function () {
 
 /////////////////////// Camille ///////
 
-
+Route::get('formAjouterBouteille', [BottleController::class, 'formAjouterBouteille']);
 /////////////////////// Fin Camille ///////
 
 

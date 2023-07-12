@@ -40,7 +40,7 @@
         <!-- section dynamique -->
         <section>
 
-        @yield('content')
+        {{ $slot }}
 
 
         </section>

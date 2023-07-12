@@ -7,7 +7,13 @@
     @livewireStyles
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 </head>
-<body class="h-screen flex flex-col ">
+
+<body class="bg-gray-100 h-screen flex items-center justify-center">
+   
+
+    @livewire('button', ['lable' => "click on me"])
+
+
 
 <!-- test maryline -->
 

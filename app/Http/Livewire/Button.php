@@ -9,7 +9,7 @@ class Button extends Component
     public $label;
     public $class;
 
-    public function mount($label = 'Submit', $class = 'btn btn-primary')
+    public function mount($label = 'Envoyer', $class = 'btn btn-primary')
     {
         $this->label = $label;
         $this->class = $class;

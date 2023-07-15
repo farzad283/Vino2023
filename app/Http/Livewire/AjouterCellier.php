@@ -23,7 +23,7 @@ class AjouterCellier extends Component
     public function store()
     {
         $this->validate();
-        $userId=2;
+        $userId = 2;
         // $userId = Auth::check() ? Auth::id() : null;
 
         Cellar::create([
@@ -34,6 +34,8 @@ class AjouterCellier extends Component
         session()->flash('message', 'Cellier ajouté avec succès.');
 
         $this->reset('nom');
+
+        return redirect()->route('cellars'); // Replace 'many_cellars' with the actual route name for the "many-cellars" view
     }
 
     public function render()

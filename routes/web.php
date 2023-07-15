@@ -17,7 +17,7 @@ use App\Http\Livewire\AjouterCellier;
 
 
 use App\Http\Livewire\SingleCellar;
-
+// use App\Http\Livewire\UpdateBottle;
 
 /*
 |--------------------------------------------------------------------------
@@ -58,25 +58,21 @@ Route::get('formAjouterBouteille', [BottleController::class, 'formAjouterBouteil
 /////////////////////// Fin Camille ///////
 
 
-/////////////////////// Safoora ///////
+/////////////////////// Safoora //////////////////
 
 Route::get('update',[SaqController::class,'updateSAQ']);
 ////////////////////////////////////////////////////////////////////////////////////////
 
 Route::get('bottles',ManyBottles::class);
 Route::get('/bottles/{bottle_id}', SingleBottle::class);
+
+// Route::get('/update_bottle/{cellar_id}/{bottle_id}', UpdateBottle::class)->name('update_bottle');
 Route::get('/ajouter-cellier', AjouterCellier::class)->name('ajouter_cellier');
-Route::post('/ajouter-cellier', [AjouterCellier::class, 'store'])->name('ajouter_cellier.store');
-
-Route::post('/ajouter-cellier', [AjouterCellier::class, 'store']);
-
 
 //////////////////////////////////////////////////////////////////////////////////////
+//we have to delete these routes (just for guide)
 Route::get('cellar',[CellarController::class,'index']);
 Route::get('cellar',[CellarController::class,'store']);
-
-
-
 Route::post('ajouter-nouvelle-bottleCellier',[BottleController::class,'ajouterNouvelleBottleCellier']);
 Route::post('boireBottleCellier',[BottleController::class,'boireBottleCellier']);
 Route::post('ajouterBottleCellier',[BottleController::class,'ajouterBottleCellier']);
@@ -86,4 +82,4 @@ Route::get('autocompleteBottle',[BottleController::class,'autocompleteBottle']);
 
 
 /////////////////////// Xavier ///////
-Route::get('/singleCellar/{cellar_id}',SingleCellar::class);
+Route::get('/singleCellar/{cellar_id}',SingleCellar::class)->name('singleCellar');

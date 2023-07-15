@@ -3,11 +3,11 @@
         <img src="{{ $bottle->image }}" alt="{{ $bottle->name }}" class="max-w-100 mt-2 ">
     </div>
     <div class="flex flex-col justify-end items-end ml-auto p-4">
-        <h1 class="font-bold text-right">{{ $bottle->name }}</h1>
+        <h1 class="font-bold text-right font-roboto">{{ $bottle->name }}</h1>
 
         <p class="text-sm mt-2 mb-2">{{ $bottle->description }}</p>
         <!-- et ainsi de suite pour les autres attributs de la bouteille -->
-        <a href="{{ $bottle->url }}" class="mb-2 underline"><span class="text-sm mt-2">Prix SAQ: {{ $bottle->price }} $</span></a>
+        <a href="{{ $bottle->url }}" class="mb-2 underline "><span class="text-sm mt-2">Prix SAQ: {{ $bottle->price }} $</span></a>
         <div class="flex mt-4 ">
             <div class="flex items-center justify-center h-8 w-26 ">
                 <button id="decrement" class="w-8 h-8 p-2 text-xl font-bold text-gold flex items-center justify-center">-</button>

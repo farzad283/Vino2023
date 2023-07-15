@@ -10,9 +10,6 @@ use App\Http\Livewire\SingleBottle;
 use App\Http\Livewire\ManyBottles;
 use App\Http\Livewire\AjouterCellier;
 
-use App\Http\Livewire\ListCellarUser;
-use App\Http\Livewire\SingleCellarUser;
-
 
 
 

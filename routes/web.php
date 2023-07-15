@@ -71,7 +71,7 @@ Route::post('/add-cellar', [AddCellar::class, 'store']);
 
 
 // Route::get('/update_bottle/{cellar_id}/{bottle_id}', UpdateBottle::class)->name('update_bottle');
-Route::get('/ajouter-cellier', AjouterCellier::class)->name('ajouter_cellier');
+// Route::get('/ajouter-cellier', AjouterCellier::class)->name('ajouter_cellier');
 
 //////////////////////////////////////////////////////////////////////////////////////
 //we have to delete these routes (just for guide)

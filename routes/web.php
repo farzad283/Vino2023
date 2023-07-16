@@ -64,11 +64,7 @@ Route::get('update',[SaqController::class,'updateSAQ']);
 ////////////////////////////////////////////////////////////////////////////////////////
 
 Route::get('bottles',ManyBottles::class);
-Route::get('/bottles/{id}', function ($id) {
-    $bottle = Bottle::find($id);
-
-    return view('livewire.single-bottle', ['bottle' => $bottle]);
-});
+Route::get('/bottles/{bottle_id}', SingleBottle::class);
 
 Route::get('/add-cellar', AddCellar::class)->name('add-cellar');
 Route::post('/add-cellar', [AddCellar::class, 'store'])->name('add-cellar.store');

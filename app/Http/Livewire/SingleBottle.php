@@ -11,9 +11,9 @@ class SingleBottle extends Component
     public $bottle;
 
     // Handle the passed parameter
-    public function mount($bottle_id)
+    public function mount($bottleId)
     {
-        $this->bottleId = $bottle_id;
+        $this->bottleId = $bottleId;
     }
 
     public function render()

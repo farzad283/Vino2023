@@ -1,6 +1,5 @@
-<div class="grid grid-cols-2 gap-2 ">
+<div class="flex flex-col gap-2 bg-pink ">
         @foreach ($bottles as $bottle)
-            @livewire('single-bottle', ['bottle_id' => $bottle->id])
+            @livewire('single-bottle', ['bottleId' => $bottle->id])
         @endforeach
-    <div class="col-span-2">{{ $bottles->links() }}</div>
 </div>

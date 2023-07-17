@@ -29,7 +29,7 @@ use App\Http\Livewire\AddBottle;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+//Route::middleware('auth')->group(function (){ début du middleware
 Route::get('/', function () {
     return view('welcome');
 });
@@ -92,3 +92,10 @@ Route::get('searchBottle',[BottleController::class,'searchBottle']);
 
 /////////////////////// Xavier ///////
 Route::get('/singleCellar/{cellar_id}',SingleCellar::class)->name('singleCellar');
+
+//}); fin  du middleware.
+
+Route::post('/register', [CustomAuthController::class, 'store']);
+Route::get('/register', [CustomAuthController::class, 'create'])->name('register');
+Route::get('login', [CustomAuthController::class,'index'])->name('login');
+Route::post('login', [CustomAuthController::class,'authentication']);

@@ -17,8 +17,6 @@ use App\Http\Livewire\AddBottle;
 use App\Http\Controllers\CustomAuthController;
 
 
-
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes

@@ -14,7 +14,7 @@
 
 use App\Http\Livewire\AddCellar;
 use App\Http\Livewire\AddBottle;
-
+use App\Http\Controllers\CustomAuthController;
 
 
 
@@ -29,7 +29,7 @@ use App\Http\Livewire\AddBottle;
 | contains the "web" middleware group. Now create something great!
 |
 */
-//Route::middleware('auth')->group(function (){ début du middleware
+Route::middleware('auth')->group(function (){ 
 Route::get('/', function () {
     return view('welcome');
 });
@@ -44,7 +44,7 @@ Route::get('/', function () {
 
 
 /////////////////////// Farzad ///////
-Route::get('bottles',ManyBottles::class);
+//Route::get('bottles',ManyBottles::class);
 Route::get('/bottles/{bottle_id}', SingleBottle::class);
 Route::get('/cellars', ManyCellars::class)->name('cellars');
 
@@ -63,7 +63,7 @@ Route::get('formAddBottle', AddBottle::class);
 Route::get('update',[SaqController::class,'updateSAQ']);
 ////////////////////////////////////////////////////////////////////////////////////////
 
-Route::get('bottles',ManyBottles::class);
+Route::get('bottles',ManyBottles::class)->name('bottles');
 Route::get('/bottles/{bottle_id}', SingleBottle::class);
 
 Route::get('/add-cellar', AddCellar::class)->name('add-cellar');
@@ -93,9 +93,9 @@ Route::get('searchBottle',[BottleController::class,'searchBottle']);
 /////////////////////// Xavier ///////
 Route::get('/singleCellar/{cellar_id}',SingleCellar::class)->name('singleCellar');
 
-//}); fin  du middleware.
+}); 
 
-Route::post('/register', [CustomAuthController::class, 'store']);
-Route::get('/register', [CustomAuthController::class, 'create'])->name('register');
+Route::post('register', [CustomAuthController::class, 'store']);
+Route::get('register', [CustomAuthController::class, 'create'])->name('register');
 Route::get('login', [CustomAuthController::class,'index'])->name('login');
 Route::post('login', [CustomAuthController::class,'authentication']);

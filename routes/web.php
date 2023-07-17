@@ -92,7 +92,6 @@ Route::get('searchBottle',[BottleController::class,'searchBottle']);
 
 /////////////////////// Xavier ///////
 Route::get('/singleCellar/{cellar_id}',SingleCellar::class)->name('singleCellar');
-
 }); 
 
 Route::post('register', [CustomAuthController::class, 'store']);

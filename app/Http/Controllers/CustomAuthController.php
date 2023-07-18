@@ -6,11 +6,13 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
+use App\Models\Cellar;
+
 
 class CustomAuthController extends Controller
 {
 
-     /**
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
@@ -28,41 +30,70 @@ class CustomAuthController extends Controller
 
     public function store(Request $request)
     {
-        
-        $request->validate( [
+
+        $request->validate([
             'first_name' => 'required|regex:/^[a-zA-ZÀ-ÿ\s\-]+$/|min:2', /* Accepte les lettres FR en majuscule et minuscule ainsi que les lettre EN.  */
-            'last_name' => 'required|regex:/^[a-zA-ZÀ-ÿ\s\-]+$/|min:2',            
+            'last_name' => 'required|regex:/^[a-zA-ZÀ-ÿ\s\-]+$/|min:2',
             'email' => 'required|email|unique:users,email',
             'password' => 'required|string|min:8|confirmed',
         ]);
 
-        User::create([
+        $user = User::create([
             'first_name' => $request->first_name,
             'last_name' => $request->last_name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
         ]);
 
+        Cellar::create([
+            'user_id' => $user->id,
+            'name' => 'Cellier 1'
+        ]);
+
         // Auth::login($user);
 
-        return redirect(route('login'))->withSuccess('Votre compte a été créé avec succès!'); 
+        return redirect(route('login'))->withSuccess('Votre compte a été créé avec succès!');
     }
 
-    public function authentication(Request $request){
+    /**
+     * Authentification de l'utilisateur.
+     *
+     * @param  Request  $request  Les données de la requête.
+     * @return \Illuminate\Http\Response  La réponse HTTP.
+     */
+    public function authentication(Request $request)
+    {
         $request->validate([
             'email' => 'required|email|exists:users',
             'password' => 'required'
         ]);
 
-        $credentials = $request->only('email','password');
+        $credentials = $request->only('email', 'password');
 
 
         if (Auth::attempt($credentials)) {
+            $user = Auth::user();
+            // À utiliser plus tard
+            /*    $cellarInf = $user->cellars->pluck('name','id')->toArray();
+            $ids = array_keys($cellarInf);
+            $names = array_values($cellarInf); */
+
+             // Récupération du premier cellier de l'utilisateur
+            $cellar = $user->cellars->first();
+
+             // Création du tableau contenant les informations du cellier
+            $cellarInf = [
+                'id' => $cellar->id,
+                'name' => $cellar->name
+            ];
+
+            // Stockage des informations du cellier dans la session
+            session()->put('cellar_inf', $cellarInf);
+
+            // Redirection vers la page souhaitée après l'authentification réussie ou vers bottles par défaut
             return redirect()->intended(route('bottles'));
         }
-        
+        // Redirection vers la page de connexion avec un message d'erreur en cas d'échec d'authentification
         return redirect()->back()->withErrors('Courriel ou mot de passe invalide');
-        
     }
-
 }

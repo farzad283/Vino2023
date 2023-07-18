@@ -46,4 +46,8 @@ class User extends Authenticatable
     public function cellars() {
         return $this->hasMany(Cellar::class);
     }
+
+    public function cellar() {
+        return $this->belongsTo(Cellar::class);
+    }
 }

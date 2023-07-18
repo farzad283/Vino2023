@@ -4,10 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 use App\Models\Cellar;
-
+use Exception;
 
 class CustomAuthController extends Controller
 {
@@ -38,21 +39,28 @@ class CustomAuthController extends Controller
             'password' => 'required|string|min:8|confirmed',
         ]);
 
-        $user = User::create([
-            'first_name' => $request->first_name,
-            'last_name' => $request->last_name,
-            'email' => $request->email,
-            'password' => Hash::make($request->password),
-        ]);
+        try {
+            $user = User::create([
+                'first_name' => $request->first_name,
+                'last_name' => $request->last_name,
+                'email' => $request->email,
+                'password' => Hash::make($request->password),
+            ]);
 
-        Cellar::create([
-            'user_id' => $user->id,
-            'name' => 'Cellier 1'
-        ]);
+            Cellar::create([
+                'user_id' => $user->id,
+                'name' => 'Cellier 1'
+            ]);
 
-        // Auth::login($user);
+            DB::commit();
 
-        return redirect(route('login'))->withSuccess('Votre compte a été créé avec succès!');
+            // Auth::login($user);
+            return redirect(route('login'))->withSuccess('Votre compte a été créé avec succès!');
+        } catch (Exception $e) {
+            //throw $e -> ceci est pour nous seulement, pour debugger
+            DB::rollBack();
+            return back()->withError('Une erreur est survenue. Veuillez réessayer.');
+        }
     }
 
     /**
@@ -78,10 +86,10 @@ class CustomAuthController extends Controller
             $ids = array_keys($cellarInf);
             $names = array_values($cellarInf); */
 
-             // Récupération du premier cellier de l'utilisateur
+            // Récupération du premier cellier de l'utilisateur
             $cellar = $user->cellars->first();
 
-             // Création du tableau contenant les informations du cellier
+            // Création du tableau contenant les informations du cellier
             $cellarInf = [
                 'id' => $cellar->id,
                 'name' => $cellar->name

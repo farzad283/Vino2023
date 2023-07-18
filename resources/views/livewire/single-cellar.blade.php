@@ -25,7 +25,7 @@
 
                     </div>
                     
-                    <a href="{{ route('update_bottle', ['cellar_id' => $cellar->id,'bottle_id' => $bottle->id]) }}" class="py-2">
+                    <a href="{{ route('update_bottle', ['cellar_id' => $cellar->id,'bottle_id' => $bottle->id]) }}"  class="bg-blue-500 text-white px-3 py-1 rounded hover:bg-blue-600">
                          @livewire('button', ['label' => 'modifier cellier'])
                     </a>
 
@@ -33,10 +33,6 @@
                   
                       @livewire('delete-bottle', ['bottleId' =>$bottle->id, 'cellarId' => $cellar->id])
 
-                    </div>
-                    
-                    <div class="py-2">
-                        @livewire('button', ['label' => 'adjouter'])
                     </div>
                 </div>
              

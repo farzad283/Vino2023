@@ -6,7 +6,7 @@ use Livewire\Component;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Cellar;
 
-class AjouterCellier extends Component
+class AddCellar extends Component
 {
     public $nom;
 
@@ -23,7 +23,7 @@ class AjouterCellier extends Component
     public function store()
     {
         $this->validate();
-        $userId = 2;
+        $userId=2;
         // $userId = Auth::check() ? Auth::id() : null;
 
         Cellar::create([
@@ -34,12 +34,10 @@ class AjouterCellier extends Component
         session()->flash('message', 'Cellier ajouté avec succès.');
 
         $this->reset('nom');
-
-        return redirect()->route('cellars'); // Replace 'many_cellars' with the actual route name for the "many-cellars" view
     }
 
     public function render()
     {
-        return view('livewire.ajouter-cellier')->layout('layouts.app');
+        return view('livewire.add-cellar')->layout('layouts.app');
     }
 }

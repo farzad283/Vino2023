@@ -52,7 +52,7 @@ class BottleController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function ajouterNouvelleBottleCellier(Request $request)
+    public function addNewBottle(Request $request)
     {
         // Aller chercher l'id de la bouteille et l'id du cellier provenant de la requête.
         $bottleId = $request->input('bottle_id');
@@ -79,7 +79,7 @@ class BottleController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function boireBottleCellier(Request $request)
+    public function drinkBottleFromCellar(Request $request)
     {
         // Get the bottle ID, cellar ID, consumption date, and note from the request
         $bottleId = $request->input('bottle_id');
@@ -98,13 +98,13 @@ class BottleController extends Controller
         $bottleConsumed->save();
 
         // Decrease the quantity of bottles in the BottleInCellar table
-        $bottleCellier = BottleInCellar::where('bottle_id', $bottleId)
+        $bottleCellar = BottleInCellar::where('bottle_id', $bottleId)
             ->where('cellar_id', $cellarId)
             ->first();
 
-        if ($bottleCellier) {
-            $bottleCellier->quantity = $bottleCellier->quantity - 1;
-            $bottleCellier->save();
+        if ($bottleCellar) {
+            $bottleCellar->quantity = $bottleCellar->quantity - 1;
+            $bottleCellar->save();
         }
 
         return response()->json(['success' => true, 'message' => 'Bottle consumed and quantity updated']);
@@ -116,7 +116,7 @@ class BottleController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function ajouterBottleCellier(Request $request)
+    public function addBottleToCellar(Request $request)
     {
         // Aller chercher l'id de la bouteille, l'id du cellier et la nouvelle quantité provenant de la requête.
         $bottleId = $request->input('bottle_id');

@@ -9,11 +9,14 @@
     @livewireStyles
 </head>
 <body>
-  
+    @livewire('header')
 
     <div>
         {{ $slot }}
     </div>
+
+    @livewire('footer')
+
     @livewireScripts
 </body>
 

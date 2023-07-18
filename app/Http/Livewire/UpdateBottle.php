@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Http\Livewire;
 
 use Livewire\Component;
@@ -8,16 +9,16 @@ use App\Models\BottleInCellar;
 
 class UpdateBottle extends Component
 {
-    public $bottle_id,$cellar_id, $quantity, $bottle, $old_cellar_id;
+    public $bottle_id, $cellar_id, $quantity, $bottle, $old_cellar_id;
 
-    public function mount($cellar_id,$bottle_id)
+    public function mount($cellar_id, $bottle_id)
     {
         $this->bottle_id = $bottle_id;
         $this->cellar_id = $cellar_id;
         $this->old_cellar_id = $cellar_id;
 
         $bottleInCellar = BottleInCellar::where('cellar_id', $this->cellar_id)
-        ->where('bottle_id', $this->bottle_id)->first();
+            ->where('bottle_id', $this->bottle_id)->first();
 
         if ($bottleInCellar) {
             $this->quantity = $bottleInCellar->quantity;
@@ -37,13 +38,14 @@ class UpdateBottle extends Component
             $bottleInCellar->cellar_id = $this->cellar_id;
             $bottleInCellar->save();
 
+            $this->old_cellar_id = $this->cellar_id;
             session()->flash('message', 'Bottle updated successfully.');
         }
     }
 
     public function render()
     {
-        $cellars= Cellar::all();
+        $cellars = Cellar::all();
         return view('livewire.update-bottle', ['cellars' => $cellars]);
     }
 }

@@ -52,7 +52,8 @@ Route::get('/cellars', ManyCellars::class)->name('cellars');
 
 /////////////////////// Camille ///////
 
-Route::get('formAddBottle', AddBottle::class);
+Route::get('add-bottle', AddBottle::class)->name('add-bottle');
+Route::get('wishlist', AddBottle::class)->name('wishlist');
 /////////////////////// Fin Camille ///////
 
 

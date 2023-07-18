@@ -14,8 +14,10 @@
 
 use App\Http\Livewire\AddCellar;
 use App\Http\Livewire\AddBottle;
+use App\Http\Controllers\CustomAuthController;
 
 
+use App\Http\Livewire\UpdateBottle;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,7 +29,7 @@ use App\Http\Livewire\AddBottle;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+Route::middleware('auth')->group(function (){ 
 Route::get('/', function () {
     return view('welcome');
 });
@@ -42,7 +44,7 @@ Route::get('/', function () {
 
 
 /////////////////////// Farzad ///////
-Route::get('bottles',ManyBottles::class);
+//Route::get('bottles',ManyBottles::class);
 Route::get('/bottles/{bottle_id}', SingleBottle::class);
 Route::get('/cellars', ManyCellars::class)->name('cellars');
 
@@ -62,7 +64,7 @@ Route::get('wishlist', AddBottle::class)->name('wishlist');
 Route::get('update',[SaqController::class,'updateSAQ']);
 ////////////////////////////////////////////////////////////////////////////////////////
 
-Route::get('bottles',ManyBottles::class);
+Route::get('bottles',ManyBottles::class)->name('bottles');
 Route::get('/bottles/{bottle_id}', SingleBottle::class);
 
 Route::get('/add-cellar', AddCellar::class)->name('add-cellar');
@@ -71,8 +73,10 @@ Route::post('/add-cellar', [AddCellar::class, 'store'])->name('add-cellar.store'
 Route::post('/add-cellar', [AddCellar::class, 'store']);
 
 
-// Route::get('/update_bottle/{cellar_id}/{bottle_id}', UpdateBottle::class)->name('update_bottle');
+Route::get('/update_bottle/{cellar_id}/{bottle_id}', UpdateBottle::class)->name('update_bottle');
 // Route::get('/ajouter-cellier', AjouterCellier::class)->name('ajouter_cellier');
+
+
 
 //////////////////////////////////////////////////////////////////////////////////////
 //we have to delete these routes (just for guide)
@@ -91,3 +95,9 @@ Route::get('searchBottle',[BottleController::class,'searchBottle']);
 
 /////////////////////// Xavier ///////
 Route::get('/singleCellar/{cellar_id}',SingleCellar::class)->name('singleCellar');
+}); 
+
+Route::post('register', [CustomAuthController::class, 'store']);
+Route::get('register', [CustomAuthController::class, 'create'])->name('register');
+Route::get('login', [CustomAuthController::class,'index'])->name('login');
+Route::post('login', [CustomAuthController::class,'authentication']);

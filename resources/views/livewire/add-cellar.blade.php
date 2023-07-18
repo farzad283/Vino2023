@@ -17,6 +17,9 @@
                 Ajouter un cellier
             </button>
         </form>
+        <a href="{{ route('cellars') }}" class="py-2">
+                         @livewire('button', ['label' => 'returner au cellars'])
+         </a>
     </div>
 </div>
 

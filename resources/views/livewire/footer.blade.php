@@ -4,7 +4,7 @@
             <div class="flex justify-center justify-between px-4">
                 <!-- ICÔNES WISHLIST -->
                 <!-- ... Your Wishlist SVG Code ... -->
-                <button class='hover:bg-pale-pink w-full flex items-center justify-center'>
+                <button class='hover:bg-pale-pink w-full flex items-center justify-center'  wire:click="redirectToWishlist">
                     <!-- BLANCHE -->
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="-25 -25 100 100" class="w-16 h-16">
                         <!-- ... Your SVG Path ... -->
@@ -17,7 +17,7 @@
 
                 <!-- ICÔNES CELLIERS -->
                 <!-- ... Your Celliers SVG Code ... -->
-                <button class="w-full flex items-center justify-center" wire:click=''>
+                <button class="w-full flex items-center justify-center"  wire:click="redirectToCellars">
                     <!-- BLANCHE -->
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="-17.333 -13.333 100 100" class="w-16 h-16">
                         <!-- ... Your SVG Path ... -->
@@ -29,7 +29,7 @@
 
                 <!-- Icône AddBottle -->
                 <!-- ... Your AddBottle SVG Code ... -->
-                <button class='hover:bg-pale-pink w-full flex items-center justify-center' wire:click='redirectToAddBottle'>
+                <button class='hover:bg-pale-pink w-full flex items-center justify-center' wire:click="redirectToAddBottle">
                     <!-- BLANCHE -->
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="-21 -21 135 135" class="w-16 h-16">
                         <!-- ... Your SVG Path ... -->

@@ -17,7 +17,7 @@ use App\Http\Livewire\AjouterCellier;
 
 
 use App\Http\Livewire\SingleCellar;
-// use App\Http\Livewire\UpdateBottle;
+use App\Http\Livewire\UpdateBottle;
 
 /*
 |--------------------------------------------------------------------------
@@ -66,8 +66,9 @@ Route::get('update',[SaqController::class,'updateSAQ']);
 Route::get('bottles',ManyBottles::class);
 Route::get('/bottles/{bottle_id}', SingleBottle::class);
 
-// Route::get('/update_bottle/{cellar_id}/{bottle_id}', UpdateBottle::class)->name('update_bottle');
+Route::get('/update_bottle/{cellar_id}/{bottle_id}', UpdateBottle::class)->name('update_bottle');
 Route::get('/ajouter-cellier', AjouterCellier::class)->name('ajouter_cellier');
+
 
 //////////////////////////////////////////////////////////////////////////////////////
 //we have to delete these routes (just for guide)

@@ -11,12 +11,12 @@
                 <div class="flex flex-col p-3 space-y-2.5 items-center ">
                     <p class="text-sm text-gray-500 mb-4">Quantité: {{ $bottle->pivot->quantity }}</p>
                     <div class="flex items-center space-x-2 mb-4">
-                        <button class="bg-blue-500 text-white px-3 py-1 rounded hover:bg-blue-600">
+                        <button wire:click="increment({{ $bottle->id }})" class="bg-blue-500 text-white px-3 py-1 rounded hover:bg-blue-600">
                             <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
                             </svg>
                         </button>
-                        <button class="bg-blue-500 text-white px-3 py-1 rounded hover:bg-blue-600">
+                        <button  wire:click="decrement({{$bottle->id}})" class="bg-blue-500 text-white px-3 py-1 rounded hover:bg-blue-600">
                             <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 12H4"></path>
                             </svg>
@@ -25,17 +25,28 @@
 
                     </div>
                     
+                    <a href="{{ route('update_bottle', ['cellar_id' => $cellar->id,'bottle_id' => $bottle->id]) }}" class="py-2">
+                         @livewire('button', ['label' => 'modifier cellier'])
+                    </a>
+
                     <div class="py-2">
+                  
                       @livewire('delete-bottle', ['bottleId' =>$bottle->id, 'cellarId' => $cellar->id])
+
                     </div>
                     
+                    <div class="py-2">
+                        @livewire('button', ['label' => 'adjouter'])
+                    </div>
                 </div>
+             
             </li>
         @endforeach
     </ul>
 </div>
 
 </div>
+
 
 
 

@@ -1,30 +1,22 @@
-<!-- ======
-base non terminé
-a determiner : allure de la carte 
-select pour ajouter au cellier?
-autres boutons ? 
-===== -->
+<article class=" m-4 border-2 border-gold m-2 flex rounded-lg ">
+    <div class=" top-[-20px]  ">
+        <img src="{{ $bottle->image }}" alt="{{ $bottle->name }}" class="max-w-100 mt-2 ">
+    </div>
+    <div class="flex flex-col justify-end items-end ml-auto p-4">
+        <h1 class="font-bold text-right font-roboto">{{ $bottle->name }}</h1>
 
-<article class="border border-gold p-2 m-2 flex rounded-lg">
-
-    <div>
-        <h1 class="font-bold mb-2">{{ $bottle->name }}</h1>
-
-        <p class="text-sm">{{ $bottle->description }}</p>
+        <p class="text-sm mt-2 mb-2">{{ $bottle->description }}</p>
         <!-- et ainsi de suite pour les autres attributs de la bouteille -->
-        <a href="{{ $bottle->url }}" class="mb-2"><span class="text-sm">Prix SAQ:</span>{{ $bottle->price }}</a>
-    </div>
+        <a href="{{ $bottle->url }}" class="mb-2 underline "><span class="text-sm mt-2">Prix SAQ: {{ $bottle->price }} $</span></a>
+        <div class="flex mt-4 ">
+            <div class="flex items-center justify-center h-8 w-26 ">
+                <button id="decrement" class="w-8 h-8 p-2 text-xl font-bold text-gold flex items-center justify-center">-</button>
+                <span id="count" class="mx-4 text-gold">0</span>
+                <button id="increment" class="w-8 h-8 text-xl font-bold text-gold  flex items-center justify-center mr-6">+</button>
+            </div>
 
-
-    <div class="flex-col flex justify-end max-w-100">
-      
-            <!-- <img src="{{ $bottle->image }}" alt="{{ $bottle->name }}" class="absolute left-20 top-30"> -->
-        <img src="{{ $bottle->image }}" alt="{{ $bottle->name }}" class="">
-        <select class="text-xs mt-2 rounded-lg">
-            <option value="">Ajouter</option>
-            <option value="">Cellier 1</option>
-            <option value="">Cellier 2</option>
-
-        </select>
-    </div>
+            <div class="flex items-center justify-center ml-4 rounded-lg border-2 border-gold text-sm text-gold px-2 ">
+                @livewire('button', ['label'=> "Ajouter"])
+            </div>
+        </div>
 </article>

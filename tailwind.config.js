@@ -16,12 +16,15 @@ module.exports = {
         '100': '100px',
         '150': '150px',
         '200': '200px'
-      }
+      },
+      fontFamily: {
+        'roboto': ['Roboto', 'sans-serif'],
+        'montserrat': ['Montserrat', 'sans-serif']
+      },
     },
   },
   plugins: [
     require('@tailwindcss/forms'),
-    require('@tailwindcss/typography'),
     require('@tailwindcss/aspect-ratio'),
   ],
 }

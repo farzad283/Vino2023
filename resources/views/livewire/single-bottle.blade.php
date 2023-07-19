@@ -1,4 +1,4 @@
-<article class="mx-6 my-2 flex border-2 border-gold rounded-lg items-center gap-2">
+<article class="mx-6 my-2 flex border-2 border-gold rounded-lg items-center gap-2 h-screen">
    
         <img src="{{ $bottle->image }}" alt="{{ $bottle->name }}" class="max-w-80">
    

@@ -58,7 +58,7 @@ class AddBottle extends Component
 
     public function saveUnlistedBottle()
     {
-        // Validate the input data based on the rules defined in $this->rules
+        // Validez les données d'entrée en fonction des règles définies dans $this->rules
         $validUnlistedBottle = $this->validate([
             'name' => 'required|string|max:200',
             'description' => 'string|max:200|nullable',
@@ -73,21 +73,21 @@ class AddBottle extends Component
         // transforme le champ Prix si la donnée est vide
         $validUnlistedBottle['price'] = $this->price ?: null;
 
-        // Save the image to storage and get its path
+        // Sauvegardez l'image dans le stockage et obtenez son chemin
         if ($this->image) {
             $imagePath = $this->image->store('bottle_images', 'public');
             $validUnlistedBottle['url_image'] = $imagePath;
         }
 
-        // Create a new UnlistedBottle instance and fill it with the validated data
+        // Créez une nouvelle instance de UnlistedBottle et remplissez-la avec les données validées
         $unlistedBottle = new UnlistedBottle($validUnlistedBottle);
 
-        // Save the new UnlistedBottle record to the database
+        // Sauvegardez le nouvel enregistrement UnlistedBottle dans la base de données
         $unlistedBottle->save();
 
-        // Clear the form fields after successful save
+        // Effacez les champs du formulaire après une sauvegarde réussie
         $this->resetForm();
-        // Optionally, you can add a success message or any other desired action here
+        // Facultativement, vous pouvez ajouter ici un message de succès ou toute autre action souhaitée
     }
 
     private function resetForm()

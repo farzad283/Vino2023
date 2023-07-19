@@ -16,7 +16,6 @@
     </div>
 
     @livewire('footer')
-
     @livewireScripts
 </body>
 

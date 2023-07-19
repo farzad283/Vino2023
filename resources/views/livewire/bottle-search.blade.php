@@ -2,7 +2,7 @@
     <div style="position: relative;">
         <input type="text" wire:model="search" wire:keydown="fetchResults" placeholder="Search..." class="border border-gray-300 rounded py-2 px-4 mb-2">
         <button class="bg-red hover:bg-dark-red text-white font-bold py-2 px-4 border border-dark-red rounded" wire:click="handleSearch">Search</button>
-
+        <a href="{{ route('bottle-advanced-form') }}">Advanced Search</a>
         @if(!empty($results))
             <div style="position: absolute; top: 100%; left: 0; z-index: 10; background-color: white; border: 1px solid #ccc; border-radius: 4px; width: 100%;">
                 <ul style="list-style: none; padding: 0;">

@@ -15,7 +15,7 @@
         {{ $slot }}
     </div>
 
-    @livewire('footer')
+    <!-- @livewire('footer') -->
 
     @livewireScripts
 </body>

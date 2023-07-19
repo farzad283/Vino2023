@@ -1,4 +1,4 @@
-<div class="mt-4 font-roboto">
+<div class="mt-4 font-roboto h-screen">
     <h1 class="text-center text-xl mb-6">Liste de vos celliers</h1>
     <div class="flex flex-col gap-2 bg-pink ">
         @foreach ($cellars as $cellar)

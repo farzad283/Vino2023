@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateUnlistedBottlesTable extends Migration
+class CreateUnlistedBottlesTable1 extends Migration
 {
     /**
      * Run the migrations.

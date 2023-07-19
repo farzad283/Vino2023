@@ -1,4 +1,4 @@
-<div class="p-6">
+<div class="p-6 h-screen">
     <h1 class="text-3xl font-bold mb-4">{{ $cellar->name }}</h1>
     <h2 class="text-xl font-semibold mb-2">Bouteilles:</h2>
     <ul class="grid grid-cols-1 gap-4">

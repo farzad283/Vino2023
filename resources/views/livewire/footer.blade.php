@@ -1,4 +1,4 @@
-<div class="sticky bottom-0 w-full left-0 right-0 flex items-center justify-between">
+<div class="sticky bottom-0 w-full left-0 right-0 flex items-center justify-between bg-red">
     <div class="flex w-full px-4 text-center text-white dark:bg-neutral-600">
                 <!-- ICÔNE WISHLIST -->
                 <button class='hover:bg-pale-pink w-full flex justify-center' wire:click="redirectToWishlist">

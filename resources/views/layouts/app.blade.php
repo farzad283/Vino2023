@@ -8,15 +8,17 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     @livewireStyles
 </head>
-<body>
+<body class=" flex flex-col h-screen">
     @livewire('header')
 
-    <div>
+    <div class="flex-grow overflow-y-auto">
         {{ $slot }}
     </div>
 
+
     @livewire('footer')
     @livewireScripts
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </body>
 
 </html>

@@ -47,10 +47,10 @@ class CustomAuthController extends Controller
                 'password' => Hash::make($request->password),
             ]);
 
-            Cellar::create([
-                'user_id' => $user->id,
-                'name' => 'Cellier 1'
-            ]);
+            // Cellar::create([
+            //     'user_id' => $user->id,
+            //     'name' => 'Cellier 1'
+            // ]);
 
             DB::commit();
 
@@ -81,24 +81,10 @@ class CustomAuthController extends Controller
 
         if (Auth::attempt($credentials)) {
             $user = Auth::user();
-            // À utiliser plus tard
-            /*    $cellarInf = $user->cellars->pluck('name','id')->toArray();
-            $ids = array_keys($cellarInf);
-            $names = array_values($cellarInf); */
-
-            // Récupération du premier cellier de l'utilisateur
-            $cellar = $user->cellars->first();
-
-            // Création du tableau contenant les informations du cellier
-            $cellarInf = [
-                'id' => $cellar->id,
-                'name' => $cellar->name
-            ];
-
-            // Stockage des informations du cellier dans la session
-            session()->put('cellar_inf', $cellarInf);
-
-            // Redirection vers la page souhaitée après l'authentification réussie ou vers bottles par défaut
+            
+            if ($user->role==1) {
+                return redirect()->intended(route('admin-panel'));
+            }
             return redirect()->intended(route('bottles'));
         }
         // Redirection vers la page de connexion avec un message d'erreur en cas d'échec d'authentification

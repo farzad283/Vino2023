@@ -46,6 +46,6 @@ class UpdateBottle extends Component
     public function render()
     {
         $cellars = Cellar::all();
-        return view('livewire.update-bottle', ['cellars' => $cellars]);
+        return view('livewire.update-bottle', ['cellars' => $cellars ]);
     }
 }

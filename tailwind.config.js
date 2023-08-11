@@ -12,6 +12,7 @@ module.exports = {
         'pale-pink': '#FB7F6',
         'gold': '#a9926b',
         'gray': '#c4c0bc',
+        
       },
       maxWidth:{
         '100': '100px',

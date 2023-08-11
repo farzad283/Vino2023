@@ -3,33 +3,38 @@
     <div class="text-red-500">{{ $message }}</div>
     @enderror
 
-    <div class="flex items-center justify-between  mb-4 mt-2 ml-1">
-        <div class="flex items-center space-x-2 ">
+    <div class="flex items-center justify-between  mb-6 mt-2 ml-1">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 ml-3 text-red">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z" />
+        </svg>
+
+        <div class="flex items-center space-x-1 mr-24 ">
             <a href="{{ route('add-cellar') }}" class="bg-gold  text-white px-3 py-1 rounded hover:bg-dark-red  block w-28 ml-6 mx-auto">@livewire('button', ['label' => 'Créer cellier'])
             </a>
         </div>
+
         <div>
-            <button class='w-full flex justify-center items-center mr-14 ' wire:click="$emit('toggleSearch')">
+            <button class='w-full flex justify-center items-center mr-12 ' wire:click="$emit('toggleSearch')">
                 <svg class="h-6 w-6 text-red" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                 </svg>
             </button>
         </div>
     </div>
-  
+
     <div>
-    @if ($showSearch)
+        @if ($showSearch)
         <livewire:cellar-search wire:loading.attr="disabled" />
         @endif
     </div>
-    <h2 class="text-2xl font-bold mb-4 text-center lg:text-3xl">Celliers</h2>
+    <h2 class="text-2xl font-bold mb-4 text-center lg:text-2xl ">Celliers</h2>
     <div class="max-h-[400px] overflow-y-auto pb-12">
-        <div class="flex flex-col gap-4 "> 
+        <div class="flex flex-col gap-4 ">
             @if ($cellars->isEmpty())
             <p class="text-center">Aucune cellier trouvée.</p>
             @else
             @foreach ($cellars as $cellar)
-            <div class="border border-red rounded-lg p-2 text-red hover:bg-white hover:text-red shadow mx-auto flex justify-between items-center w-5/6"> 
+            <div class="border border-red rounded-lg p-2 text-red hover:bg-white hover:text-red shadow mx-auto flex justify-between items-center w-5/6">
                 @if($cellar->id== $updateMode)
                 <form wire:submit.prevent="editCellar({{ $cellar->id }})">
                     <div class="flex items-center mb-1">

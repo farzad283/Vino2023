@@ -8,10 +8,11 @@ module.exports = {
     extend: {
       colors: {
         'dark-red': '#251322',
-        'red': '#9B0738',
+        'red': '#9b0739',
         'pale-pink': '#FB7F6',
         'gold': '#a9926b',
         'gray': '#c4c0bc',
+        
       },
       maxWidth:{
         '100': '100px',

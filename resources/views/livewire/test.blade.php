@@ -63,3 +63,53 @@
 
 
 
+
+
+<div class=" p-6 h-screen">
+    <div class="w-full max-w-4xl">
+    <div class="flex justify-center mb-4">
+            <a href="{{ route('bottles') }}" class="bg-gold text-white px-3 py-1 rounded hover:bg-gold transition-all ease-in duration-200 ml-6 mx-auto ">
+                @livewire('button', ['label' => 'Ajouter bottles'])
+            </a>
+        </div>
+        <h1 class="text-3xl font-bold mb-4 text-center">{{ $cellar->name }}</h1>
+        <!-- <h2 class="text-xl font-semibold mb-2 text-center">Bouteilles:</h2> -->
+     
+        <ul class="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3">
+
+            @foreach($cellar->bottles as $bottle)
+            <li class="bg-white p-4 shadow-md rounded-md flex flex-col justify-around items-center transition-all ease-in duration-200" wire:key="{{ $bottle->id }}">
+                <article class="flex flex-col justify-center items-center border-2 border-gold rounded-lg">
+                    <img src="{{ $bottle->image }}" alt="{{ $bottle->name }}" class="w-36 h-40">
+                    <div class="text-center p-4">
+                        <h1 class="text-right font-bold font-roboto">{{ $bottle->name }}</h1>
+                        <p class="text-xs mt-2 mb-2">{{ $bottle->description }}</p>
+                    </div>
+                    <div class="flex flex-col p-3 space-y-2.5 items-center">
+                        <p class="text-sm text-gray-500 mb-4">Quantité: {{ $bottle->pivot->quantity }}</p>
+                        <div class="flex items-center space-x-2 mb-4">
+                        <button wire:click="$emit('incrementListen',{{ $bottle->id}})" class="bg-blue-500 text-white px-3 py-1 rounded hover:bg-blue-600">
+                            <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
+                            </svg>
+                        </button>
+
+                        <button wire:click="decrement({{$bottle->id , $cellar->cellar_id}})" class="bg-blue-500 text-white px-3 py-1 rounded hover:bg-blue-600">
+                            <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 12H4"></path>
+                            </svg>
+                        </button>
+                        </div>
+
+                        <!-- Rest of the code (unchanged) -->
+
+                    </div>
+                </article>
+            </li>
+            @endforeach
+        </ul>
+    </div>
+</div>
+
+
+

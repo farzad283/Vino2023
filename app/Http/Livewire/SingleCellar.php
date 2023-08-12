@@ -17,6 +17,7 @@ class SingleCellar extends Component
     public $qty;
     public $bottle_qty = 0;
     public $errorMessage;
+    public $modalId=0;
 
     protected $messages = [
         'qty.required' => 'Le champ qty est obligatoire.',
@@ -25,6 +26,11 @@ class SingleCellar extends Component
     ];
 
     protected $listeners = ['bottleDeleted' => 'handleBottleDeleted', "incrementListen" => "increment"];
+    public function updateCellar()
+    {
+        $this->modalId = 0;
+        // $this->loadCellars();
+    }
 
     public function handleBottleDeleted()
     {
@@ -65,6 +71,7 @@ class SingleCellar extends Component
             'qty' => 'required|numeric|min:0'
         ]);
     }
+
 
 
     public function decrement($bottle_id, $bottle_quantity)

@@ -45,9 +45,8 @@
                                             @if (session()->has('message'))
                                             <div class="mb-4 text-green-500">{{ session('message') }}</div>
                                             @endif
-                                            
                                             <textarea wire:model="note" id="note" class="w-full p-2 rounded-md mb-4" placeholder="votre note..."></textarea>
-
+                                            
                                             <button type="submit" class="bg-gold text-white  px-4 py-2 rounded-md">Envoyer</button>
                                             <!-- @click="openModal = false" -->
 

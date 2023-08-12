@@ -1,7 +1,3 @@
-
-
-
-
 <div class="p-6 h-screen">
     <div class="w-full max-w-4xl mx-auto">
         <div class="flex justify-center mb-4">
@@ -31,8 +27,7 @@
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
                                     </svg>
                                 </button>
-                                <button 
-                                 @click="openModal = true" class="bg-gold text-white px-1 py-0 rounded hover:bg-dark-red" title="bouteille consumer">
+                                <button @click="openModal = true" class="bg-gold text-white px-1 py-0 rounded hover:bg-dark-red" title="bouteille consumer">
                                     <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 12H4"></path>
                                     </svg>
@@ -41,11 +36,23 @@
                                 <!-- Modal code -->
                                 <div x-show="openModal" class="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-50">
                                     <div class="bg-white p-6 rounded-md shadow-md relative">
-                                    <button @click="openModal = false" class="bg-red text-white px-2 py-1 rounded-md absolute top-2 right-2">X</button>
+                                        <button @click="openModal = false" class="bg-red text-white px-2 py-1 rounded-md absolute top-2 right-2">X</button>
                                         <h3 class="text-xl font-bold mb-4">Entrez votre note</h3>
-                                        <textarea class="w-full p-2 rounded-md mb-4" placeholder="votre note..."></textarea>
-                                        <button wire:click="decrement({{$bottle->id , $cellar->cellar_id}})"
-                                        @click="openModal = false" class="bg-gold text-white  px-4 py-2 rounded-md">Envoyer</button>
+                                        <form wire:submit.prevent="decrement({{$bottle->id}},  {{$bottle->pivot->quantity}})">
+                                            @csrf
+                                            <input type="number" min="0" wire:model="qty" id="qty" class="w-full p-2 rounded-md mb-4" placeholder="quantité..." require>
+                                            @error('qty') <span class="text-red-500 text-sm">{{ $message }}</span> @enderror
+                                            @if (session()->has('message'))
+                                            <div class="mb-4 text-green-500">{{ session('message') }}</div>
+                                            @endif
+                                            
+                                            <textarea wire:model="note" id="note" class="w-full p-2 rounded-md mb-4" placeholder="votre note..."></textarea>
+
+                                            <button type="submit" class="bg-gold text-white  px-4 py-2 rounded-md">Envoyer</button>
+                                            <!-- @click="openModal = false" -->
+
+                                        </form>
+
                                     </div>
                                 </div>
                             </div>

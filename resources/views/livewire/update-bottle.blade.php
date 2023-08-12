@@ -3,7 +3,7 @@
    <div class="bg-dark-red bg-opacity-20 p-6 rounded-lg shadow-md w-80 lg:w-96">
 
       @if (session()->has('message'))
-      <div class="mb-4 text-green-500">{{ session('message') }}</div>
+      <div class="mb-4 text-red text-center font-bold">{{ session('message') }}</div>
       @endif
 
       <form wire:submit.prevent="store">

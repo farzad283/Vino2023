@@ -1,11 +1,11 @@
-<div class="p-6 h-screen w-full max-w-4xl">
-    <h1 class="text-center text-xl text-red font-bold mb-3" >Liste de souhaits</h1>
+<div class="p-1 h-screen w-full max-w-4xl">
+    <h1 class=" text-center text-xl text-red font-bold mb-3 mt-6 lg:w-screen lg:mb-6" >Liste de souhaits</h1>
     @if ($wishlistItems)
-        <ul class="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 max-h-screen overflow-y-auto pb-12">
+        <ul class="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:w-screen lg:md:grid-cols-4 max-h-screen overflow-y-auto pb-16 pr-5 pl-3">
             @foreach ($wishlistItems as $item)
                 <li class="bg-white p-4 shadow-md rounded-md flex flex-col justify-around items-center transition-all ease-in duration-200">
-                    <article class="relative flex flex-col justify-center items-center border-2 border-gold rounded-lg w-64 h-96"> <!-- Added relative class -->
-                        <span class="absolute top-0 left-0 ml-1 mt-1 font-bold font-roboto"> <!-- Added absolute positioning classes -->
+                    <article class="relative flex flex-col justify-center items-center border-2 border-gold rounded-lg w-64 h-96"> 
+                        <span class="absolute top-0 left-0 ml-1 mt-1 font-bold font-roboto"> 
                             @if ($item->bottle->unlisted == 0)
                                 SAQ
                             @else

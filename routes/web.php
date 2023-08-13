@@ -26,6 +26,7 @@ use App\Http\Livewire\ConsumedBottle;
 use App\Http\Livewire\UpdateBottle;
 use App\Http\Livewire\UsersStatistics;
 use App\Http\Livewire\AddToWishlist;
+use App\Http\Livewire\CellarUserStatistics;
 
 /*
 |--------------------------------------------------------------------------
@@ -85,6 +86,7 @@ Route::get('/bouteille-consumee/{cellar_id}/{bottle_id}', ConsumedBottle::class)
 
 ////////Admin/////////////
 Route::get('/admin-panel', AdminPanel::class)->name('admin-panel');
+ Route::get('/user-cellars-statistics', CellarUserStatistics::class)->name('user-cellars-statistics');
  Route::get('/cellars-statistics', CellarsStatistics::class)->name('cellars-statistics');
  Route::get('/users-statistics', UsersStatistics::class)->name('users-statistics');
  Route::get('/bottles-statistics', BottlesStatistics::class)->name('bottles-statistics');

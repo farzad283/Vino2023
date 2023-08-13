@@ -6,7 +6,6 @@ use App\Models\BottleConsumed;
 use App\Models\BottleInCellar;
 use Livewire\Component;
 use App\Models\Cellar;
-use Illuminate\Support\Facades\Auth;
 
 class SingleCellar extends Component
 {
@@ -17,7 +16,7 @@ class SingleCellar extends Component
     public $qty;
     public $bottle_qty = 0;
     public $errorMessage;
-    public $modalId=0;
+    public $modalId = 0;
 
     protected $messages = [
         'qty.required' => 'Le champ qty est obligatoire.',
@@ -25,11 +24,28 @@ class SingleCellar extends Component
         'qty.min' => 'Le champ qty ne doit pas être moins :min .',
     ];
 
-    protected $listeners = ['bottleDeleted' => 'handleBottleDeleted', "incrementListen" => "increment"];
-    public function updateCellar()
+    protected $listeners = [
+        'bottleDeleted' => 'handleBottleDeleted',
+        "incrementListen" => "increment",
+        'modalHandler' => 'modalHandler'
+    ];
+
+    public function modalHandler()
     {
         $this->modalId = 0;
         // $this->loadCellars();
+    }
+
+    public function setModal($bottleId)
+    {
+        $bottle = BottleInCellar::where('bottle_id', $bottleId)
+            ->where('cellar_id', $this->cellarId)
+            ->first();
+
+        if ($bottle) {
+            // $this->cellar_name = $cellar->name; // Set the input field to the current name of the cellar
+            $this->modalId = $bottleId; // Set the update mode to the cellar ID
+        }
     }
 
     public function handleBottleDeleted()
@@ -82,7 +98,7 @@ class SingleCellar extends Component
             session()->flash('message',  'Le champ qty ne doit pas dépasser ' . $bottle_quantity);
             return;
         }
-        
+
         $bottleInCellar = BottleInCellar::where('cellar_id', $this->cellarId)
             ->where('bottle_id', $bottle_id)
             ->first();
@@ -102,12 +118,14 @@ class SingleCellar extends Component
                 'bottle_id' =>  $bottle_id,
                 'cellar_id' => $this->cellarId,
                 'note' => $this->note,
-                'qty' => 1,
+                'qty' =>  $this->qty,
                 "consumption_date" => date('Y-m-d'),
             ]);
 
             $bottleInCellar->save();
-            $this->reset('note');
+            $this->reset("note");
+            $this->reset("qty");
+            $this->emit('modalHandler');
         }
     }
     // public function submitConsumed(){
@@ -132,6 +150,6 @@ class SingleCellar extends Component
             ->where('id', $this->cellarId)
             ->first();
 
-        return view('livewire.single-cellar', ['cellar' => $this->cellar]);
+        return view('livewire.single-cellar', ['cellar' => $this->cellar, 'modalId' => $this->modalId]);
     }
 }

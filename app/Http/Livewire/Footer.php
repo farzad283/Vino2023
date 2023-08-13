@@ -25,7 +25,7 @@ class Footer extends Component
 
     public function redirectToWishlist()
     {
-        $url = route('wishlist');
+        $url = route('add-to-wishlist');
         return redirect($url);
     }
 

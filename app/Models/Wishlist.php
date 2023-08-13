@@ -14,5 +14,10 @@ class Wishlist extends Model
         'bottle_id',
         'quantity'
     ];
+
+    public function bottle()
+    {
+        return $this->belongsTo(Bottle::class);
+    }
     
 }

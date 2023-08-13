@@ -25,6 +25,7 @@ use App\Http\Livewire\CellarsStatistics;
 use App\Http\Livewire\ConsumedBottle;
 use App\Http\Livewire\UpdateBottle;
 use App\Http\Livewire\UsersStatistics;
+use App\Http\Livewire\AddToWishlist;
 
 /*
 |--------------------------------------------------------------------------
@@ -44,19 +45,16 @@ Route::get('/',ManyBottles::class)->name('bottles');
 // À refaire avec LiveWire  N'oublier pas de mettre des commentaire en Français et le phpDoc aussi. 
 
 
-/////////////////////// Maryline ///////
-
-
-/////////////////////// Fin Maryline ///////
-
-
 /////////////////////// Farzad ///////
-//Route::get('bottles',ManyBottles::class);
 Route::get('/bottles/{bottle_id}', SingleBottle::class);
 Route::get('/cellars', ManyCellars::class)->name('cellars');
 Route::get('/bottle', BottleAdvancedForm::class)->name('bottle-advanced-form');
 Route::get('/search', SearchAdvancedResults::class)->name('search-advanced-results');
 Route::get('/bottlesearch', BottleSearch::class)->name('bottle-search');
+
+Route::get('/add-to-wishlist', AddToWishlist::class)->name('add-to-wishlist');
+
+
 
 /////////////////////// Fin Farzad ///////
 
@@ -65,7 +63,7 @@ Route::get('/bottlesearch', BottleSearch::class)->name('bottle-search');
 /////////////////////// Camille ///////
 
 Route::get('add-bottle', AddBottle::class)->name('add-bottle');
-Route::get('wishlist', AddBottle::class)->name('wishlist');
+// Route::get('wishlist', AddBottle::class)->name('wishlist');
 /////////////////////// Fin Camille ///////
 
 

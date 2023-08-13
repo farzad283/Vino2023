@@ -8,6 +8,7 @@
         <h1 class="text-3xl font-bold mb-4 text-center">{{ $cellar->name }}</h1>
 
         <ul class="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 max-h-[400px] overflow-y-auto pb-12">
+
             @foreach($cellar->bottles as $bottle)
             <li class="bg-white p-4 shadow-md rounded-md flex flex-col justify-around items-center transition-all ease-in duration-200" wire:key="{{ $bottle->id }}">
                 <article class="flex flex-col justify-center items-center border-2 border-gold rounded-lg p-4">

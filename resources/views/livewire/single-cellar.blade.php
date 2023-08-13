@@ -8,7 +8,7 @@
         <h1 class="text-3xl font-bold mb-4 text-center">{{ $cellar->name }}</h1>
         <!-- <h2 class="text-xl font-semibold mb-2 text-center">Bouteilles:</h2> -->
 
-        <ul class="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 max-h-[400px] overflow-y-auto pb-12">
+        <ul class="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 max-h-screen overflow-y-auto pb-12">
 
             @foreach($cellar->bottles as $bottle)
             <li class="bg-white p-4 shadow-md rounded-md flex flex-col justify-around items-center transition-all ease-in duration-200" wire:key="{{ $bottle->id }}">
@@ -22,7 +22,7 @@
 
                     <div class="flex  p-3 space-x-4 items-center justify-start shadow">
                         <div class="flex flex-col items-center justify-center  ">
-                            <p class="text-sm  text-gray-500 mb-2  shadow py-1 px-3 ">QTY: {{ $bottle->pivot->quantity }}</p>
+                            <p class="text-sm  text-gray-500 mb-2  shadow py-1 px-1 ">QTY: {{ $bottle->pivot->quantity }}</p>
                             <div class="flex items-center space-x-2 mb-4">
                                 <button wire:click="$emit('incrementListen',{{ $bottle->id}})" class="bg-gold text-white px-1 py-0 rounded hover:bg-dark-red">
                                     <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">

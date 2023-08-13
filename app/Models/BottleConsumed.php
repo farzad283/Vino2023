@@ -13,7 +13,8 @@ class BottleConsumed extends Model
         'bottle_id',
         'cellar_id',
         'consumption_date',
-        'note'
+        'note',
+        'qty'
     ];
 
     // NE PAS RETIRER, À VOIR ENSEMBLE, ÇA PEUT NOUS SIMPLIFIER LA VIE

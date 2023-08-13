@@ -44,7 +44,8 @@ class BottleAdvancedForm extends Component
         ], $parameters);
 
         // Emit the event with search parameters
-        $this->emitTo('search-advanced-results', 'searchPerformance', $parameters['search'], $parameters['priceMin'], $parameters['priceMax'], $parameters['description']);
+        $this->emitTo('search-advanced-results', 'searchPerformance', $parameters['search'], $parameters['priceMin'],
+         $parameters['priceMax'], $parameters['description']);
 
         // Redirect to the search results page with the parameters
         return redirect()->route('search-advanced-results', $parameters);

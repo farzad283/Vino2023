@@ -1,7 +1,7 @@
 <section>
     <div class="text-3xl font-bold">Bouteilles</div>
     <div class="overflow-x-auto">
-        <table class="table-auto w-full">
+        <!-- <table class="table-auto w-full">
             <thead>
                 <tr>
                     <th class="px-4 py-2">Nom de Bouteilles</th>
@@ -14,6 +14,6 @@
             <tbody>
 
             </tbody>
-        </table>
+        </table> -->
     </div>
 </section>

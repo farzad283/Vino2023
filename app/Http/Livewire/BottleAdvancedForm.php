@@ -25,6 +25,15 @@ class BottleAdvancedForm extends Component
         ];
 
         // Vérifie si au moins un champ est rempli
+
+        if (
+            ((empty($parameters['search']) && empty($parameters['description'])) || (!empty($parameters['search']) && !empty($parameters['description']))) &&
+            (empty($parameters['priceMin']) || empty($parameters['priceMax']))
+        ) {
+            $this->errorMessage = 'Veuillez remplir au moins un champ avec les champs de prix ou seulement les champs de prix.';
+            return;
+        }
+
         if (empty($parameters['search']) && empty($parameters['priceMin']) && empty($parameters['priceMax']) && empty($parameters['description'])) {
             $this->errorMessage = 'Au moins un champ doit être rempli';
             return;
@@ -50,8 +59,7 @@ class BottleAdvancedForm extends Component
         // Redirect to the search results page with the parameters
         return redirect()->route('search-advanced-results', $parameters);
     }
-
-
+    
     public function render()
     {
         return view('livewire.bottle-advanced-form');

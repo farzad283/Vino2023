@@ -48,8 +48,8 @@
                         </a>
                         <!-- @dump($wishlistStatus) -->
                         <button wire:click="addToWishlist({{ $bottle->id }})" class="font-bold rounded-md text-sm font-semibold shadow-sm flex items-center">
-                            <svg class="{{ $wishlistStatus[$bottle->id] ? 'text-gold' : 'text-red' }} h-6 w-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="{{ $wishlistStatus[$bottle->id] ? 'red' : 'white' }}" stroke="currentColor">
-                                <path d="M14 21.35l-1.45-1.32C7.4 15.36 4 12.28 4 8.5 4 5.42 6.42 3 9.5 3c1.74 0 3.41.81 4.5 2.09C15.09 3.81 16.76 3 18.5 3 21.58 3 24 5.42 24 8.5c0 3.78-3.4 6.86-8.55 11.54L14 21.35z" fill="{{ $wishlistStatus[$bottle->id] ?? false ? 'red' : 'white' }}"/>
+                            <svg class="{{ $wishlistStatus[$bottle->id] ? 'text-gold' : 'text-red' }} h-6 w-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="{{ $wishlistStatus[$bottle->id] ? '#9B0739' : 'white' }}" stroke="currentColor">
+                                <path d="M14 21.35l-1.45-1.32C7.4 15.36 4 12.28 4 8.5 4 5.42 6.42 3 9.5 3c1.74 0 3.41.81 4.5 2.09C15.09 3.81 16.76 3 18.5 3 21.58 3 24 5.42 24 8.5c0 3.78-3.4 6.86-8.55 11.54L14 21.35z" fill="{{ $wishlistStatus[$bottle->id] ?? false ? '#9B0739' : 'white' }}"/>
                                 <path d="M4 6h8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                 <path d="M4 12h8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                 <path d="M4 18h8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>                            

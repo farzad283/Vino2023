@@ -38,6 +38,7 @@ class SingleCellar extends Component
 
     public function setModal($bottleId)
     {
+        
         $bottle = BottleInCellar::where('bottle_id', $bottleId)
             ->where('cellar_id', $this->cellarId)
             ->first();
@@ -87,7 +88,7 @@ class SingleCellar extends Component
             'qty' => 'required|numeric|min:0'
         ]);
     }
-
+   
 
 
     public function decrement($bottle_id, $bottle_quantity)
@@ -98,7 +99,11 @@ class SingleCellar extends Component
             session()->flash('message',  'Le champ qty ne doit pas dépasser ' . $bottle_quantity);
             return;
         }
-
+        $this->validate([
+            'qty' => 'required|integer|min:1',
+        ], [
+            'qty.required' => 'Veuillez ajouter une quantité.', 
+        ]);
         $bottleInCellar = BottleInCellar::where('cellar_id', $this->cellarId)
             ->where('bottle_id', $bottle_id)
             ->first();

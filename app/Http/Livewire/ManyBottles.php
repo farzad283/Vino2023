@@ -81,7 +81,7 @@ class ManyBottles extends Component
                 }
             });
         }
-        $bottles = $bottles->orderBy('name')->paginate(9);
+        $bottles = $bottles->orderBy('name')->paginate(10);
         $wishlistBottleIds = Wishlist::where('user_id', Auth::id())
         ->whereIn('bottle_id', $bottles->pluck('id'))
         ->pluck('bottle_id')

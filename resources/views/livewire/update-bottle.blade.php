@@ -1,14 +1,14 @@
-<div class="fixed top-10 left-7 flex justify-center items-center h-screen  lg:right-6 ">
-
+<div class="fixed top-10 left-7 flex justify-center items-center h-screen  lg:right-6  flex flex-col">
+<h1 class="mb-4 text-l font-bold">Remplacer les bouteilles entre Cellieres</h1>
    <div class="bg-dark-red bg-opacity-20 p-6 rounded-lg shadow-md w-80 lg:w-96">
-
+   
       @if (session()->has('message'))
       <div class="mb-4 text-red text-center font-bold">{{ session('message') }}</div>
       @endif
 
       <form wire:submit.prevent="store">
          @csrf
-
+     
          <div class="mb-4">
             <label for="quantity" class="block text-sm font-medium text-gray-700">Quantity :</label>
             <input type="number" wire:model="quantity" id="quantity" min="0"

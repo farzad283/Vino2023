@@ -1,10 +1,9 @@
 <header class="relative">
     <!-- User Information (Top Right) -->
     <div class="bg-red w-full justify-between text-white text-xs border-b border-lightgold border-opacity-50">
-        <div class="flex items-center justify-between py-2">
+        <div class="flex items-center justify-between py-1">
             @auth
             <p class="ml-3">Bonjour {{ $user->first_name }}</p>
-
             <div class="flex">
                 @if($user->role== 1)
                 <a href="{{ route('admin-panel') }}" class="mr-3">
@@ -23,7 +22,6 @@
                     <path d="M7 12h14l-3 -3m0 6l3 -3" />
                 </svg>
             </div>
-
             @endauth
         </div>
     </div>

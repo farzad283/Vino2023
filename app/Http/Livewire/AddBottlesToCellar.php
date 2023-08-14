@@ -19,31 +19,33 @@ class AddBottlesToCellar extends Component
         $this->cellar_id = Cellar::where('user_id', Auth::id())->first()->id ?? 0;
     }
     
-
         // Set a default value here, it can be any value that doesn't exist as an ID in your 'cellars' table.
    
-
-
-    public function store()
-    {
-       
-        $bottleInCellar = BottleInCellar::where('bottle_id', $this->bottle_id)
-            ->where('cellar_id', $this->cellar_id)
-            ->first();
-
-
-        if (!$bottleInCellar) {
-
-            BottleInCellar::create([
-                'bottle_id' => $this->bottle_id,
-                'quantity' => $this->quantity,
-                'cellar_id' => $this->cellar_id,
+        public function store()
+        {
+            $this->validate([
+                'quantity' => 'required|integer|min:1',
+            ], [
+                'quantity.required' => 'Veuillez ajouter une quantité.', 
             ]);
-            session()->flash('message', 'Ajouter bottles succée.');
-        } else {
-            session()->flash('message-error', 'Vous avez déjà cette bouteille');
+        
+            $bottleInCellar = BottleInCellar::where('bottle_id', $this->bottle_id)
+                ->where('cellar_id', $this->cellar_id)
+                ->first();
+        
+            if (!$bottleInCellar) {
+                BottleInCellar::create([
+                    'bottle_id' => $this->bottle_id,
+                    'quantity' => $this->quantity,
+                    'cellar_id' => $this->cellar_id,
+                ]);
+                session()->flash('message', 'Ajouter bottles succée.');
+            } else {
+                session()->flash('message-error', 'Vous avez déjà cette bouteille');
+            }
         }
-    }
+       
+        
 
 
     public function render()

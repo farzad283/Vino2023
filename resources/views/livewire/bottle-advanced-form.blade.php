@@ -17,7 +17,7 @@
             <label for="priceMax" class="mb-1 text-red">Prix maximal:</label>
             <input class="p-2 mb-6 w-full rounded-md border border-red-500 text-red-500" wire:model="priceMax" type="number" placeholder="Prix maximal...">
 
-            <button class="p-3 bg-red text-white font-bold rounded-md w-full cursor-pointer" wire:click="handleSearch">Recherche</button>
+            <button class="p-3 bg-red text-white font-bold rounded-md w-full cursor-pointer" wire:click="handleSearch">Filtrée</button>
         </form>
     </div>
 </div>

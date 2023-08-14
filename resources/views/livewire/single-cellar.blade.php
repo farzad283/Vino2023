@@ -69,6 +69,7 @@
                             </svg>
                         </a>
                     </div>
+                    
                 </article>
             </li>
             @endforeach

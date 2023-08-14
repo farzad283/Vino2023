@@ -26,12 +26,14 @@
                 @endif
             </div>
             @if ($unlisted)
-                <a href="{{ route('add-bottle') }}"  class="bg-blue-500 text-white px-3 py-1 rounded hover:bg-blue-600">
-                @livewire('button', ['label' => 'Ajouter nouvelle bouteille'])
+                <a href="{{ route('add-bottle') }}"  class="bg-gold  text-white px-3 py-1 rounded hover:bg-dark-red  block w-36 mb-8 mx-auto">
+                @livewire('button', ['label' => 'Ajouter bouteille'])
                 </a>
             @endif
-            @foreach($bottles as $bottle)
-            <article class="relative mx-6 my-2 flex border-2 border-red bg-white rounded-3xl items-center gap-2 mb-12">
+            @foreach($bottles->chunk(2) as $chunk)
+            <div class="flex flex-col md:flex-row justify-between">
+                @foreach($chunk as $bottle)
+                <article class="relative mx-6 my-2 md:w-5/6 lg:w-5/6 flex border-2 border-red bg-white rounded-3xl items-center gap-2 mb-12">
 
                     <img src="{{ $bottle->image }}" alt="{{ $bottle->name }}" class="max-w-80 relative bottom-3 -mt-4 transform transition-transform duration-300 hover:scale-125 hover:brightness-80">
 
@@ -57,7 +59,10 @@
                         </button>
                     </div> 
                 </article>
-            @endforeach
+                @endforeach
+                </div>
+                @endforeach
+                
             @if ($bottles->count())
             <div class="col-span-2">
                 <div class="flex justify-center flex-col-reverse items-center">

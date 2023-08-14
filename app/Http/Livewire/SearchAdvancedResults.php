@@ -116,7 +116,7 @@ class SearchAdvancedResults extends Component
         }
         
         // Trier et paginer
-        $bottles = $query->orderBy('name')->paginate(9);
+        $bottles = $query->orderBy('name')->paginate(10);
         $wishlistBottleIds = Wishlist::where('user_id', Auth::id())
             ->whereIn('bottle_id', $bottles->pluck('id'))
             ->pluck('bottle_id')

@@ -42,7 +42,7 @@
 
                     <div class="flex flex-col justify-end items-left p-4 sm:flex-row sm:justify-between sm:gap-4">
                         <h1 class="text-left font-bold font-roboto">{{ $bottle->name }}</h1>
-                        <p class="text-xs mt-2 mb-2">{{ $bottle->description }}</p>
+                        <p >{{ $bottle->description }}</p>
                         <h2 class="text-left  font-montserrat">${{ $bottle->price }}</h2>
                     </div>
                      <div class="absolute bottom-3 right-3 flex"> 

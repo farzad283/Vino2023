@@ -20,7 +20,7 @@
                 </div>
             </div>
             <!-- Centrer le composant de recherche en mode mobile -->
-            <div class="flex items-center justify-center sm:justify-start sm:items-start sm:space-x-2 sm:mb-4 ">
+            <div class="flex items-center justify-center sm:justify-start sm:items-start sm:space-x-2 sm:mb-4 lg:ml-6">
                 @if ($showSearch)
                     @livewire('bottle-search')
                 @endif
@@ -77,7 +77,7 @@
                 </div>
             </div>
             @else
-            <p>No bottles found.</p>
+            <p class="font-bold text-red text-center">Aucune bouteille trouvée</p>
             @endif
         </div>
     </div>

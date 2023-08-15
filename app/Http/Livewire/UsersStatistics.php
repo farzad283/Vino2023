@@ -34,7 +34,7 @@ class UsersStatistics extends Component
     }
 
     public function render() {
-        return view('livewire.Users-statistics');
+        return view('livewire.users-statistics');
     }
 }
 

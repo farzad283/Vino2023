@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire;
 
+use App\Models\Country;
 use Livewire\Component;
 use App\Models\Bottle;
 
@@ -11,20 +12,28 @@ class BottleAdvancedForm extends Component
     public $results = [];
     public $priceMin = '';
     public $priceMax = '';
-    public $name = '';
     public $description = '';
+    public $country_id = '';
     public $errorMessage = '';
+    public $countries;
+
+    public function mount()
+    {
+       // Récupérer la liste des pays de votre base de données
+        $this->countries = Country::all();
+    }
     
     public function handleSearch()
     {
+        $selectedCountry = Country::find($this->country_id);
+        $this->description = $selectedCountry ? $selectedCountry->name : null; 
+
         $parameters = [
             'search' => $this->search,
             'priceMin' => $this->priceMin,
             'priceMax' => $this->priceMax,
-            'description' => $this->description,
+            'description' => $this->description, 
         ];
-
-        // Vérifie si au moins un champ est rempli
 
         if (
             ((empty($parameters['search']) && empty($parameters['description'])) || (!empty($parameters['search']) && !empty($parameters['description']))) &&

@@ -23,8 +23,7 @@ class BottleSearch extends Component
                                     ->orWhereBetween('price', [(float)$this->search, (float)$this->search + 0.999999]);
                         });
                     }
-                })->paginate(10, ['*'], 'page', $this->page); // Use $this->page to fetch the correct page of results
-
+                })->paginate(10, ['*'], 'page', $this->page); 
                 $newResults = collect($bottles->items())->map(function ($bottle) {
                     return [
                         'id' => $bottle->id ?? '',
@@ -70,8 +69,8 @@ class BottleSearch extends Component
         {
             $this->results = [];
             $this->emit('searchPerformed', $this->search);
-            $this->results = []; // Clear the search results
-            $this->search = ''; // Clear the search input
+            $this->results = []; 
+            $this->search = ''; 
         }
 
     public function render()

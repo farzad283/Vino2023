@@ -9,8 +9,17 @@
             <label for="name" class="mb-1 text-red">Nom:</label>
             <input class="p-2 mb-2 w-full rounded-md border border-red-500 text-red-500" wire:model="search" type="text" placeholder="Nom...">
 
-            <label for="description" class="mb-1 text-red">Pays:</label>
-            <input class="p-2 mb-2 w-full rounded-md border border-red-500 text-red-500" wire:model="description" id="description" type="text" placeholder="Pays...">
+            <div class="sm:col-span-3 lg:col-span-6">
+                <label for="country_id" class="mb-1 text-red">Pays</label>
+                <div class="mt-1">
+                    <select id="country_id" name="country_id" autocomplete="country_id" wire:model='country_id' class="p-2 mb-2 w-full rounded-md border border-red-500 text-red-500">
+                        @foreach ($countries as $country)
+                        <option value="{{ $country->id }}">{{ $country->name }}</option>
+                        @endforeach
+                    </select>
+                    @error('country_id') <span class="text-red">{{ $message }}</span> @enderror
+                </div>
+            </div>
 
             <label for="priceMin" class="mb-1 text-red">Prix minimum:</label>
             <input class="p-2 mb-2 w-full rounded-md border border-red-500 text-red-500" wire:model="priceMin" type="number" placeholder="Prix minimum..." >

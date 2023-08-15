@@ -83,7 +83,6 @@
                             </div>
                         </div>
 
-
                         <div class="mt-6 flex items-center justify-end gap-x-6 lg:w-80">
                             <button wire:click="saveUnlistedBottle" class="p-3 bg-red text-white font-bold rounded-md w-full cursor-pointer hover:bg-red-600 focus:outline-none focus:bg-red-600">Ajouter</button>
                         </div>

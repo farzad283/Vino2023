@@ -1,5 +1,5 @@
-<div class=" top-10 left-7 flex flex-col justify-center items-center h-screen lg:right-6  gap-8 ">
-   <h1 class="text-xl font-bold mb-4">Ajouter une bouteille à la cellier</h1>
+<div class="relative bottom-14 flex flex-col justify-center items-center h-screen  lg:right-6  gap-8 ">
+   <h1 class="text-xl font-bold mb-2">Ajouter une bouteille à la cellier</h1>
    <div class="bg-dark-red bg-opacity-20 p-4 rounded-lg shadow-md w-80 lg:w-96  ">
       @if (session()->has('message'))
       <div class="mb-4 text-green-500">{{ session('message') }}</div>

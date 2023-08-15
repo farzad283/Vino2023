@@ -31,7 +31,7 @@
     </div>
     <!-- Logo (centré) -->
     <div class="flex justify-center items-center  bg-red ">
-    <svg class="mx-auto text-lightgold"  version="1.0" xmlns="http://www.w3.org/2000/svg"
+    <svg class=" mr-6 text-lightgold"  version="1.0" xmlns="http://www.w3.org/2000/svg"
     width="100pt" height="65pt"  viewBox="0 0 610.000000 409.000000"preserveAspectRatio="xMidYMid meet">
         <g transform="translate(0.000000,409.000000) scale(0.100000,-0.100000)"
         fill="#ffff" stroke="none">

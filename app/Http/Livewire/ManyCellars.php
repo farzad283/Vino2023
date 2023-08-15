@@ -55,8 +55,8 @@ class ManyCellars extends Component
 {
     $cellar = Cellar::where('id', $cellarId)->first();
     if ($cellar) {
-        $this->cellar_name = $cellar->name; // Set the input field to the current name of the cellar
-        $this->updateMode = $cellarId; // Set the update mode to the cellar ID
+        $this->cellar_name = $cellar->name; 
+        $this->updateMode = $cellarId; 
     }
 }
 
@@ -75,18 +75,16 @@ class ManyCellars extends Component
             $cellar->name = $this->cellar_name;
             $cellar->save();
             $this->emit('cellarUpdated');
-            $this->cellar_name = ""; // Reset the input field
-            $this->updateMode = 0; // Exit update mode
+            $this->cellar_name = ""; 
+            $this->updateMode = 0; 
         }
     }
 
     public function deleteCellar($cellarId)
     {
-        // Delete associated bottles in the cellar
         BottleInCellar::where('cellar_id', $cellarId)->forceDelete();
         BottleConsumed::where('cellar_id', $cellarId)->forceDelete();
 
-        // Delete the cellar itself
         $cellar = Cellar::find($cellarId);
         if ($cellar) {
             $cellar->delete();

@@ -34,8 +34,11 @@
             <div class="flex flex-col md:flex-row justify-between">
                 @foreach($chunk as $bottle)
                 <article class="relative mx-6 my-2 md:w-5/6 lg:w-5/6 flex border-2 border-red bg-white rounded-3xl items-center gap-2 mb-12">
+                <a href="{{ route('single-bottle', ['bottle_id' => $bottle->id]) }}" >
 
-                    <img src="{{ $bottle->image }}" alt="{{ $bottle->name }}" class="max-w-80 relative bottom-3 -mt-4 transform transition-transform duration-300 hover:scale-125 hover:brightness-80">
+                <img src="{{ $bottle->image }}" alt="{{ $bottle->name }}" class="max-w-80 relative bottom-3 -mt-4 transform transition-transform duration-300 hover:scale-125 hover:brightness-80">
+                </a>
+                 
 
                     <div class="flex flex-col justify-end items-left p-4 sm:flex-row sm:justify-between sm:gap-4">
                         <h1 class="text-left font-bold font-roboto">{{ $bottle->name }}</h1>

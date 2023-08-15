@@ -75,6 +75,7 @@ Route::get('/update',[SaqController::class,'updateSAQ'])->name('update');
 //////////////////////////////////////////////////////////////////
 
 Route::get('/bottles/{bottle_id}', SingleBottle::class);
+Route::get('/single-bottle/{bottle_id}', SingleBottle::class)->name('single-bottle');
 
 Route::get('/add-cellar', AddCellar::class)->name('add-cellar');
 

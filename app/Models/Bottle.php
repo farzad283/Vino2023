@@ -37,6 +37,9 @@ class Bottle extends Model
     return $this->belongsToMany(Cellar::class, 'bottle_in_cellars')
                 ->withPivot('quantity');
     }
-
+    public function consumedNotes()
+    {
+        return $this->hasMany('App\Models\BottleConsumed', 'bottle_id');
+    }
 
 }

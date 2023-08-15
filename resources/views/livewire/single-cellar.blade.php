@@ -23,16 +23,23 @@
                         <div class="flex flex-row items-center justify-center ">
                             <p class="h-6 text-sm text-gray-500  shadow py-0 px-3">QTY: {{ $bottle->pivot->quantity }}</p>
                             <button wire:click="$emit('incrementListen',{{ $bottle->id}})" class="bg-gold text-white px-1 py-0 rounded hover:bg-dark-red">
-                                    <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
-                                    </svg>
+                                    <div title="Ajouter de la quantité
+                                    ">
+                                        <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
+                                        </svg>
+                                    </div>
                                 </button>
                         </div>
 
                         <div class="flex flex-row item-center justify-center mt-4  ">
                             <div x-data="{ openModal: false }" class="flex items-center space-x-2 mb-4 ">
                                     <button  wire:click="setModal({{ $bottle->id }})" @click="openModal = true" class="  px-1 py-1 rounded  text-red hover:text-dark-red" title="bouteille consumer">
-                                        <svg class="h-7 w-7" fill="currentColor" xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 640 512"><path d="M155.6 17.3C163 3 179.9-3.6 195 1.9L320 47.5l125-45.6c15.1-5.5 32 1.1 39.4 15.4l78.8 152.9c28.8 55.8 10.3 122.3-38.5 156.6L556.1 413l41-15c16.6-6 35 2.5 41 19.1s-2.5 35-19.1 41l-71.1 25.9L476.8 510c-16.6 6.1-35-2.5-41-19.1s2.5-35 19.1-41l41-15-31.3-86.2c-59.4 5.2-116.2-34-130-95.2L320 188.8l-14.6 64.7c-13.8 61.3-70.6 100.4-130 95.2l-31.3 86.2 41 15c16.6 6 25.2 24.4 19.1 41s-24.4 25.2-41 19.1L92.2 484.1 21.1 458.2c-16.6-6.1-25.2-24.4-19.1-41s24.4-25.2 41-19.1l41 15 31.3-86.2C66.5 292.5 48.1 226 76.9 170.2L155.6 17.3zm44 54.4l-27.2 52.8L261.6 157l13.1-57.9L199.6 71.7zm240.9 0L365.4 99.1 378.5 157l89.2-32.5L440.5 71.7z"/></svg>
+                                        <div title="Consommation">
+                                            <svg class="h-7 w-7" fill="currentColor" xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 640 512">
+                                                <path d="M155.6 17.3C163 3 179.9-3.6 195 1.9L320 47.5l125-45.6c15.1-5.5 32 1.1 39.4 15.4l78.8 152.9c28.8 55.8 10.3 122.3-38.5 156.6L556.1 413l41-15c16.6-6 35 2.5 41 19.1s-2.5 35-19.1 41l-71.1 25.9L476.8 510c-16.6 6.1-35-2.5-41-19.1s2.5-35 19.1-41l41-15-31.3-86.2c-59.4 5.2-116.2-34-130-95.2L320 188.8l-14.6 64.7c-13.8 61.3-70.6 100.4-130 95.2l-31.3 86.2 41 15c16.6 6 25.2 24.4 19.1 41s-24.4 25.2-41 19.1L92.2 484.1 21.1 458.2c-16.6-6.1-25.2-24.4-19.1-41s24.4-25.2 41-19.1l41 15 31.3-86.2C66.5 292.5 48.1 226 76.9 170.2L155.6 17.3zm44 54.4l-27.2 52.8L261.6 157l13.1-57.9L199.6 71.7zm240.9 0L365.4 99.1 378.5 157l89.2-32.5L440.5 71.7z"/>
+                                            </svg>
+                                        </div>
                                     </button>
                                     @if($bottle->id== $modalId)
                                     <!-- Modal code -->
@@ -60,12 +67,15 @@
                             </div>
                             <div class="h-3">
                                 <button wire:click="deleteBottle({{ $bottle->id }})" class=" px-3 py-0 rounded  ">
-                                    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" class="h-7 w-7 text-red">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
-                                    </svg>
+                                    <div title="Supprimer">
+                                        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" class="h-7 w-7 text-red">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                                        </svg>
+                                    </div>
                                 </button>
                             </div>
-                            <a href="{{ route('update_bottle', ['cellar_id' => $cellar->id,'bottle_id' => $bottle->id]) }}" class= " h-7 w-7 text-red ">
+
+                            <a title="Remplacer les bouteilles entre Cellieres href="{{ route('update_bottle', ['cellar_id' => $cellar->id,'bottle_id' => $bottle->id]) }}" class= " h-7 w-7 text-red ">
                             <svg class="svg-icon" style="vertical-align: middle;fill: currentColor;overflow: hidden;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"><path d="M393.846154 738.461538c0-15.753846-13.784615-29.538462-29.538462-29.538461h-295.384615c-15.753846 0-29.538462 13.784615-29.538462 29.538461v216.615385c0 15.753846 13.784615 29.538462 29.538462 29.538462h295.384615c15.753846 0 29.538462-13.784615 29.538462-29.538462v-216.615385zM159.507692 433.230769H63.015385c-19.692308 0-29.538462 17.723077-17.723077 27.569231l157.538461 163.446154c7.876923 5.907692 19.692308 5.907692 27.569231 0l157.538462-163.446154c11.815385-11.815385 1.969231-27.569231-17.723077-27.569231h-92.553847c0-98.461538 96.492308-196.923077 194.953847-196.923077V118.153846C295.384615 118.153846 159.507692 256 159.507692 433.230769z m663.63077-33.476923c-7.876923-5.907692-19.692308-5.907692-27.569231 0l-157.538462 163.446154c-11.815385 11.815385-1.969231 27.569231 17.723077 27.569231h94.523077c0 118.153846-80.738462 196.923077-198.892308 196.923077v118.153846c177.230769 0 317.046154-137.846154 317.046154-315.076923H964.923077c19.692308 0 29.538462-17.723077 17.723077-27.569231l-159.507692-163.446154zM984.615385 68.923077c0-15.753846-13.784615-29.538462-29.538462-29.538462h-295.384615c-15.753846 0-29.538462 13.784615-29.538462 29.538462v216.615385c0 15.753846 13.784615 29.538462 29.538462 29.538461h295.384615c15.753846 0 29.538462-13.784615 29.538462-29.538461v-216.615385z"  /></svg>
                             </a>
                         </div>

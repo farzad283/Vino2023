@@ -20,7 +20,7 @@
                 </div>
             </div>
             <!-- Centrer le composant de recherche en mode mobile -->
-            <div class="flex items-center justify-center sm:justify-start sm:items-start sm:space-x-2 sm:mb-4 ">
+            <div class="flex items-center justify-center sm:justify-start sm:items-start sm:space-x-2 sm:mb-4 lg:ml-6">
                 @if ($showSearch)
                     @livewire('bottle-search')
                 @endif
@@ -46,19 +46,20 @@
                         <h2 class="text-left  font-montserrat">${{ $bottle->price }}</h2>
                     </div>
                      <div class="absolute bottom-3 right-3 flex"> 
-                        <a href="{{ route('add-bottles-to-cellar', ['bottle_id' => $bottle->id]) }}" class="rounded-md text-sm font-semibold shadow-sm flex items-center">
+                        <a title="Ajouter à la cellier" href="{{ route('add-bottles-to-cellar', ['bottle_id' => $bottle->id]) }}" class="rounded-md text-sm font-semibold shadow-sm flex items-center">
                             <svg class="h-6 w-6 text-red mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 4H6a2 2 0 00-2 2v12a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-2m-4-1v8m0 0l3-3m-3 3L9 8m-5 5h2.586a1 1 0 01.707.293l2.414 2.414a1 1 0 00.707.293h3.172a1 1 0 00.707-.293l2.414-2.414a1 1 0 01.707-.293H20"/>
                             </svg>
                         </a>
-                        <!-- @dump($wishlistStatus) -->
                         <button wire:click="addToWishlist({{ $bottle->id }})" class="font-bold rounded-md text-sm font-semibold shadow-sm flex items-center">
-                            <svg class="{{ $wishlistStatus[$bottle->id] ? 'text-gold' : 'text-red' }} h-6 w-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="{{ $wishlistStatus[$bottle->id] ? '#9B0739' : 'white' }}" stroke="currentColor">
-                                <path d="M14 21.35l-1.45-1.32C7.4 15.36 4 12.28 4 8.5 4 5.42 6.42 3 9.5 3c1.74 0 3.41.81 4.5 2.09C15.09 3.81 16.76 3 18.5 3 21.58 3 24 5.42 24 8.5c0 3.78-3.4 6.86-8.55 11.54L14 21.35z" fill="{{ $wishlistStatus[$bottle->id] ?? false ? '#9B0739' : 'white' }}"/>
-                                <path d="M4 6h8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M4 12h8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M4 18h8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>                            
-                            </svg>
+                            <div title="Ajouter à la liste d'envie">
+                                <svg class="{{ $wishlistStatus[$bottle->id] ? 'text-gold' : 'text-red' }} h-6 w-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="{{ $wishlistStatus[$bottle->id] ? '#9B0739' : 'white' }}" stroke="currentColor">
+                                    <path d="M14 21.35l-1.45-1.32C7.4 15.36 4 12.28 4 8.5 4 5.42 6.42 3 9.5 3c1.74 0 3.41.81 4.5 2.09C15.09 3.81 16.76 3 18.5 3 21.58 3 24 5.42 24 8.5c0 3.78-3.4 6.86-8.55 11.54L14 21.35z" fill="{{ $wishlistStatus[$bottle->id] ?? false ? '#9B0739' : 'white' }}"/>
+                                    <path d="M4 6h8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M4 12h8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M4 18h8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </div>
                         </button>
                     </div> 
                 </article>
@@ -79,7 +80,7 @@
                 </div>
             </div>
             @else
-            <p>No bottles found.</p>
+            <p class="font-bold text-red text-center">Aucune bouteille trouvée</p>
             @endif
         </div>
     </div>

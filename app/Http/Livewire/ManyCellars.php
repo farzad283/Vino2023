@@ -107,6 +107,6 @@ class ManyCellars extends Component
 
     public function toggleSearch()
     {
-        $this->showSearch = !$this->showSearch; // Toggle the visibility
+        $this->showSearch = !$this->showSearch; 
     }
 }

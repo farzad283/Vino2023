@@ -5,6 +5,7 @@ namespace App\Http\Livewire;
 use Livewire\Component;
 use App\Models\Bottle;
 
+
 class SingleBottle extends Component
 {
     public $bottleId;
@@ -24,7 +25,9 @@ class SingleBottle extends Component
         $cellar=session('cellar_inf');
         $this->bottle = Bottle::find($this->bottleId);
 
-        return view('livewire.single-bottle', ['bottle' => $this->bottle]);
+    
+        $bottles = Bottle::with('consumedNotes')->get();
+        return view('livewire.single-bottle', ['bottles' => $bottles]);
     }
 }
 

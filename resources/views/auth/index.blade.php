@@ -67,7 +67,7 @@
             </div>
 
             <div class="flex items-center justify-center">
-                <button type="submit" class="bg-red hover:bg-blue-700 text-white font-bold py-8 px-18 rounded text-4xl focus:outline-none focus:shadow-outline w-full lg:px-2 lg:py-2 lg:text-xl">
+                <button type="submit" class="bg-red hover:bg-dark-red text-white font-bold py-8 px-18 rounded text-4xl focus:outline-none focus:shadow-outline w-full lg:px-2 lg:py-2 lg:text-xl">
                     Se connecter
                 </button>
             </div>

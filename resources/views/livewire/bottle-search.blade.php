@@ -4,7 +4,7 @@
         <svg wire:click="handleSearch" class="h-5 w-5  text-gray-500 cursor-pointer absolute top-1/2  transform -translate-y-1/2" fill="none" viewBox="0 0 24 24" stroke="currentColor" style="right:40px;">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
         </svg>
-        <a href="{{ route('bottle-advanced-form') }}" class="flex items-center text-decoration-none ">
+        <a title="Filtre" href="{{ route('bottle-advanced-form') }}" class="flex items-center text-decoration-none ">
              <svg class="h-6 w-6 text-gray-500 " width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                 <path stroke="none" d="M0 0h24v24H0z"/>
                 <path d="M5.5 5h13a1 1 0 0 1 0.5 1.5L14 12L14 19L10 16L10 12L5 6.5a1 1 0 0 1 0.5 -1.5"/>

@@ -19,16 +19,6 @@ class CellarsStatistics extends Component
         ->selectRaw('MAX(bottle_in_cellars.updated_at) as last_modified')
         ->groupBy('cellars.id', 'cellars.name', 'cellars.user_id')
         ->get();
-
-        // $$cellars_statistics = BottleInCellar::select('cellar_id', 'name', 'user_id')
-        //     ->selectRaw('COUNT(*) as bottle_count')
-        //     ->with("cellars")
-        //     // ->selectRaw('SUM(consumed) as bottle_consumed')
-        //     ->selectRaw('SUM(deleted_at) as bottle_deleted')
-        //     ->selectRaw('MAX(updated_at) as last_modified')
-        //     ->groupBy('cellar_id')
-        //     ->get();
-
         return view('livewire.cellars-statistics', compact('cellars_statistics'));
     }
 }

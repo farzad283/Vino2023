@@ -1,15 +1,15 @@
-<div class="fixed top-10 left-7 flex justify-center items-center h-screen lg:right-6 ">
-    <div class="bg-dark-red bg-opacity-20 p-4 rounded-lg shadow-lg w-80 lg:w-96">
+<div class=" flex justify-center items-center lg:right-6 flex flex-col mt-8 mb-20">
+    <h1 class="text-xl font-bold mb-4">Ajouter une boteille unique</h1>
+    <div class="bg-dark-red bg-opacity-20 p-4 rounded-lg shadow-lg w-80 lg:w-96 mb-8" >
         @if (session()->has('message'))
         <div class="mb-4 text-green-500">{{ session('message') }}</div>
         @endif
-
         <form wire:submit.prevent class='flex flex-col mb-3 lg:pl-4'>
             @csrf
 
-                <div class="pb-2 max-h-[400px] overflow-y-auto">
+                <div class="pb-2 max-h-[900px] overflow-y-auto">
 
-                        <div class="mt-4  grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
+                        <div class=" grid grid-cols-1 gap-x-6 gap-y-6 sm:grid-cols-6">
                             <div class="sm:col-span-3">
                                 <label for="name" class="block text-sm font-medium leading-6 text-gray-900">Nom</label>
                                 <div class="mt-1 w-72 lg:w-80">

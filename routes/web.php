@@ -67,7 +67,7 @@ Route::get('add-bottle', AddBottle::class)->name('add-bottle');
 
 /////////////////////// Safoora //////////////////
 
-Route::get('/update',[SaqController::class,'updateSAQ'])->name('update');
+ 
 
 
 Route::get('/bottles/{bottle_id}', SingleBottle::class);

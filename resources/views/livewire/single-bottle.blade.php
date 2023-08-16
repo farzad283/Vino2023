@@ -1,4 +1,4 @@
-<div class="h-screen">
+<div class="h-screen mt-8">
 <article class="mt-10 mx-6 my-2 sm:w-5/6 md:w-full md:mx-0 lg:w-full lg:mx-10 lg:mt-16 flex  bg-white rounded-3xl items-center gap-2 mb-8 " >
     
     <img src="{{ $bottle->image }}" alt="{{ $bottle->name }}" class="max-w-80 relative bottom-3 -mt-4 transform transition-transform duration-300 hover:scale-125 hover:brightness-80">

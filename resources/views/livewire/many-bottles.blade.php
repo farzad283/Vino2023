@@ -26,7 +26,7 @@
                 @endif
             </div>
             @if ($unlisted)
-                <a href="{{ route('add-bottle') }}"  class="bg-gold  text-white px-3 py-1 rounded hover:bg-dark-red  block w-36 mb-8 mx-auto">
+                <a href="{{ route('add-bottle') }}"  class="bg-gold  text-white px-4 py-1 rounded hover:bg-dark-red  block w-40 mb-8 mx-auto">
                 @livewire('button', ['label' => 'Ajouter bouteille'])
                 </a>
             @endif

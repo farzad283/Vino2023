@@ -20,8 +20,8 @@
 
                             <div class="sm:col-span-4">
                                 <label for="description" class="block text-sm font-medium leading-6 text-gray-900">Description</label>
-                                <div class="mt-1 lg:w-80 ">
-                                    <textarea rows="2" wire:model='description' class="focus:placeholder-transparent block p-2.5 w-full text-sm text-gray-900 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Délicieux Bourgogne, gourmand et tout en fruit."></textarea>
+                                <div class="mt-1  w-72 lg:w-80 ">
+                                    <textarea rows="2" wire:model='description' class="focus:placeholder-transparent block p-2.5 w-full text-sm text-gray-900 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 " placeholder="Délicieux Bourgogne, gourmand et tout en fruit."></textarea>
                                     @error('description') <span class="text-red">{{ $message }}</span> @enderror
                                 </div>
                             </div>
